@@ -1,0 +1,3 @@
+>>> file = open('maybe_a.gif', 'rb')
+>>> file.read(6) == b'GIF89a'
+True

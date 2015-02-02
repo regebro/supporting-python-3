@@ -1,0 +1,6 @@
+>>> import sys
+>>> if sys.version > '3':
+...     buffer = memoryview
+>>> b = buffer('yay!'.encode())
+>>> len(b)
+4

@@ -1,0 +1,8 @@
+>>> import csvutil
+>>> with csvutil.UnicodeWriter('eggs.csv', delimiter=' ', quotechar='|') as writer:
+...     writer.writerow([u'Spam', u'Spam', u'Spam', u'Spam', u'Spam', u'B\xe4ked Beans'])
+...     writer.writerow([u'Spam', u'L\xf6vely Spam', u'Wonderf\xfcl Spam'])
+
+>>> with csvutil.UnicodeReader('eggs.csv', delimiter=' ', quotechar='|') as reader:
+...     [row for row in reader]
+[[u'Spam', u'Spam', u'Spam', u'Spam', u'Spam', u'B\xe4ked Beans'], [u'Spam', u'L\xf6vely Spam', u'Wonderf\xfcl Spam']]

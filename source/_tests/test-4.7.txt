@@ -1,0 +1,5 @@
+>>> f = open('/tmp/afile.txt', 'w')
+>>> try:
+...     n = f.write('sometext')
+... finally:
+...     f.close()

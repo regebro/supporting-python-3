@@ -1,0 +1,8 @@
+>>> try:
+...     input = raw_input
+... except NameError:
+...     pass
+
+>>> input('Type in a string: ')
+Type in a string: It works!
+'It works!'

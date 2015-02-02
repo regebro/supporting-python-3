@@ -1,0 +1,5 @@
+>>> from makeunicode import u
+>>> print(u('\u00dcnic\u00f6de'))
+Ünicöde
+>>> print(u('\xdcnic\N{Latin Small Letter O with diaeresis}de'))
+Ünicöde

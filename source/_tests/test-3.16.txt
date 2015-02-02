@@ -1,0 +1,1 @@
+>>> ignore = open('/tmp/file.out', 'wt').write('Some text')

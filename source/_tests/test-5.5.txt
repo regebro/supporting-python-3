@@ -1,0 +1,2 @@
+>>> print("This works in all versions of Python!")
+This works in all versions of Python!

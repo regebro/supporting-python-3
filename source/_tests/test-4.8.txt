@@ -1,0 +1,2 @@
+>>> with open('/tmp/afile.txt', 'w') as f:
+...     n = f.write('sometext')

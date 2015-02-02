@@ -1,0 +1,2 @@
+>>> (x for x in 'Silly Walk')
+<generator object <genexpr> at ...>

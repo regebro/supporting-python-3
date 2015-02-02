@@ -1,0 +1,3 @@
+>>> infile = open('pythons.txt')
+>>> [x.strip() for x in sorted(infile)]
+['Eric', 'Graham', 'John', 'Michael', 'Terry', 'Terry']

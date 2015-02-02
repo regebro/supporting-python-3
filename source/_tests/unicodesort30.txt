@@ -1,0 +1,6 @@
+>>> import locale
+>>> locale.setlocale(locale.LC_ALL, 'sv_SE.UTF-8')
+'sv_SE.UTF-8'
+>>> corpus = ["art", "Älg", "ærgeligt", "Aardvark"]
+>>> sorted(corpus, key=locale.strxfrm)
+['Aardvark', 'art', 'Älg', 'ærgeligt']

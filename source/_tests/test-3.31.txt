@@ -1,0 +1,20 @@
+>>> from mixin import ComparableMixin
+
+>>> class Hashable(ComparableMixin):
+...     def __init__(self, firstname, lastname):
+...         self._first = firstname
+...         self._last = lastname
+...
+...     def _cmpkey(self):
+...         return (self._last, self._first)
+...
+...     def __repr__(self):
+...         return "%s(%r, %r)" % (self.__class__.__name__, 
+...                                self._first, self._last)
+...
+...     def __hash__(self):
+...         return hash(self._cmpkey())
+...
+>>> d = {Hashable('Donald', 'Duck'): 'Daisy Duck'}
+>>> d
+{Hashable('Donald', 'Duck'): 'Daisy Duck'}

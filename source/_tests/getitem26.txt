@@ -1,0 +1,17 @@
+>>> class StrawberryTart(object):
+...
+...    def __getitem__(self, n):
+...        """An example of how to use slice objects"""
+...        if isinstance(n, slice):
+...            # Expand the slice object using range()
+...            # to a maximum of eight items.
+...            return [self[x] for x in 
+...                    range(*n.indices(8))]
+...
+...        # Return one item of the tart
+...        return 'A slice of StrawberryTart with ' \
+...               'not so much rat in it.'
+...
+>>> tart = StrawberryTart()
+>>> tart[5:6]
+['A slice of StrawberryTart with not so much rat in it.']

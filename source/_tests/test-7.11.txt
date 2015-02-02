@@ -1,0 +1,5 @@
+>>> i = iter(range(5))
+>>> next(i)
+0
+>>> next(i)
+1

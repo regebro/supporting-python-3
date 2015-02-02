@@ -1,0 +1,2 @@
+>>> hasattr(bool, '__call__')
+True

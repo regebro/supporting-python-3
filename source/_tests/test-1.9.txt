@@ -1,0 +1,3 @@
+>>> dict = {'Adam': 'Eve', 'John': 'Yoko', 'Donald': 'Daisy'}
+>>> dict.keys()[0]
+'Donald'

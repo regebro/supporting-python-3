@@ -1,0 +1,3 @@
+>>> import string
+>>> string.upper('Dinsdale!')
+'DINSDALE!'

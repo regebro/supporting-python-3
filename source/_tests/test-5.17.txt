@@ -1,0 +1,8 @@
+>>> try:
+...    f = "1" + 1
+... except TypeError as e:
+...    for m in e.args:
+...        print(m)
+...    print(e.args[0])
+Can't convert 'int' object to str implicitly
+Can't convert 'int' object to str implicitly

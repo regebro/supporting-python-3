@@ -1,0 +1,7 @@
+Old style formatting:
+>>> 'I %s Python %i' % ('like', 2)
+'I like Python 2'
+
+New style formatting:
+>>> 'I {0} Python {1}'.format('♥', 3)
+'I ♥ Python 3'

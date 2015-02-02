@@ -1,0 +1,17 @@
+>>> import sys
+>>> if sys.version < '3':
+...     def byteindex(data, index):
+...         return ord(data[index])
+...
+...     def iterbytes(data):
+...         return (ord (char) for char in data)
+...
+... else:
+...     byteindex = lambda x, i: x[i]
+...     iterbytes = lambda x: iter(x)
+... 
+>>> from makebytes import b
+>>> byteindex(b('Test'), 2)
+115
+>>> print([x for x in iterbytes(b('Test'))])
+[84, 101, 115, 116]

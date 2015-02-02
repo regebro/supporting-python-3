@@ -1,0 +1,4 @@
+>>> data = bytearray(b'Monty Python')
+>>> data[5] = 33
+>>> data
+bytearray(b'Monty!Python')

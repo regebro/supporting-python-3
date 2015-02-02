@@ -1,0 +1,306 @@
+===========================================================================
+Porting with 2to3
+===========================================================================
+
+.. index:: 2to3
+
+Although it's perfectly possible to just run your Python 2 code under Python 3
+and fix each problem as it turns up, this quickly becomes very tedious. You need
+to change every ``print`` statement to a ``print()`` function, and you need to
+change every ``except Exception, e`` to use the new ``except Exception as e``
+syntax. These changes are tricky to do in a search and replace and stops being
+exciting very quickly. Luckily we can use ``2to3`` to do most of these boring
+changes automatically.
+
+----------------------------------------------------------------------------
+Using 2to3
+----------------------------------------------------------------------------
+
+``2to3`` is made up of several parts. The core is a ``lib2to3``, a package that
+contains support for refactoring Python code. It can analyze the code and build
+up a parse tree describing the structure of the code. You can then modify this
+parse tree and from it generate new code. Also in ``lib2to3`` is a framework for
+"fixers", which are modules that make specific refactorings, such as changing
+the ``print`` statement into a ``print()`` function. The set of standard fixers
+that enables ``2to3`` to convert Python 2 code to Python 3 code are located in
+``lib2to3.fixes``. Lastly is the ``2to3`` script itself, which you run to do the
+conversion.
+
+Running ``2to3`` is very simple. You give a file or directory as parameter and
+it will convert the file or look through the directory for Python files and
+convert them. ``2to3`` will print out all the changes to the output, but unless
+you include the ``-w`` flag it will not write the changes to the files. It
+writes the new file to the same file name as the original one and saves the old
+one with a ``.bak`` extension, so if you want to keep the original file name
+without changes you must first copy the files and then convert the copy.
+    
+If you have doctests in your Python files you also need to run ``2to3`` a second
+time with ``-d`` to convert the doctests and if you have text files that are
+doctests you need to run ``2to3`` on those explicitly. A complete conversion can
+therefore look something like this::
+
+    $ 2to3 -w .
+    $ 2to3 -w -d .
+    $ 2to3 -w -d src/mypackage/README.txt
+    $ 2to3 -w -d src/mypackage/tests/*.txt
+    
+Under Linux and OS X the 2to3 script is installed in the same folder as the
+Python executable. Under Windows it in installed as ``2to3.py`` in the
+``Tools\Scripts`` folder in your Python installation, and you have to give
+the full path::
+
+    C:\projects\mypackage> C:\Python3.3\Tools\Scripts\2to3.py -w .
+    
+If you run ``2to3`` often you might want to add the Scripts directory to your
+system path.
+
+Explicit fixers
+===============
+
+.. index:: buffer(), fixers, sorting, sets
+
+By default, the conversion uses all fixers in the ``lib2to3.fixers`` package
+except ``buffer``, ``idioms``, ``set_literal`` and ``ws_comma``. These will only
+be used if specifically added to the command line. In this case you also need to
+specify the default set of fixers, called ``all``::
+
+    $ 2to3 -f all -f buffer .
+
+The buffer fixer will replace all use of the ``buffer`` type with a
+``memoryview`` type. The ``buffer`` type is gone in Python 3 and the
+``memoryview`` type is not completely compatible. So the ``buffer`` fixer is not
+included by default as you might have to make manual changes as well. 
+
+The other three fixers will make more stylistic changes and are as such not
+really necessary. 
+
+The ``idioms`` fixer will update some outdated idioms. It will change ``type(x)
+== SomeType`` and other type-tests to using ``isinstance()``, it will
+change the old style ``while 1:`` used in Python 1 into ``while True:`` and it
+will change some usage of ``.sort()`` into ``sorted()``
+(See :ref:`sorting-section`.)
+
+The ``set_literal`` fixer will change calls to the ``set()`` constructor to
+use the new set literal. See :ref:`set-literal-section`.
+
+The ``ws_comma`` fixer will fix up the whitespace around commas and
+colons in the code.
+
+It is possible to write your own fixers, although it is highly unlikely that you
+would need to. For more information on that, see :ref:`fixers-chapter`.
+
+You can also exclude some fixers while still running the default ``all`` set
+of fixers::
+
+    $ 2to3 -x print .
+
+If you don't intend to continue to support Python 2, that's all you need to
+know about ``2to3``. You only need to run it once and then comes the fun part,
+fixing the migration problems, which is discussed in :ref:`problems-chapter`.
+
+.. _distribution-section:
+
+----------------------------------------------------------------------------
+Distributing packages
+----------------------------------------------------------------------------
+
+.. index:: Distutils
+
+When you write Python modules or packages that are used by other developers
+you probably want to continue to support
+Python 2. Then you need to make sure that Python 3 users get the Python 3
+version and Python 2 users get the Python 2 version of your package. This can
+be as simple as documenting on the download page, if you host your packages
+yourself.
+
+Most packages for general use use ``distutils`` and are uploaded to the
+CheeseShop\ [#cheeseshop]_, from where they are often installed with tools like
+``easy_install`` or ``pip``. These tools will download the latest version of the
+package and install it, and if you have both Python 2 and Python 3 packages
+uploaded to CheeseShop, many of the users will then get the wrong version and
+will be unable to install your package.
+
+One common solution for this is to have two separate package names, like ``mymodule``
+and ``mymodule3``, but then you have two packages to maintain and two releases to make. 
+A better solution is
+to include both source trees in one distribution archive, for example
+under ``src2`` for Python 2 and ``src3`` under Python 3. You can then in your
+``setup.py`` select which source tree should be installed depending on the
+Python version::
+
+      import sys
+      from distutils.core import setup
+      
+      if sys.version < '3':
+            package_dir = {'': 'src2'}
+      else:
+            package_dir = {'': 'src3'}
+            
+      setup(name='foo',
+            version='1.0',
+            package_dir = package_dir,
+            )
+
+This way all users of your module package will download the same distribution and the
+install script will install the correct version of the code. Your ``setup.py``
+needs to run under both Python 2 and Python 3 for this to work, which
+is usually not a problem. See :ref:`noconv-chapter` for more help on how to
+do that.
+
+If you have a very complex ``setup.py`` you might want to have one
+for each version of Python, one called ``setup2.py`` for Python 2 and one
+called ``setup3.py`` for Python 3. You can then make a ``setup.py`` that 
+selects the correct setup-file depending on Python version:
+
+.. literalinclude:: _tests/test-2.6/setup.py
+
+Running 2to3 on install
+=======================
+
+The official way to support both Python 2 and Python 3 is to maintain the code
+in a version for Python 2 and convert it to Python 3 with the ``2to3`` tool.
+If you are doing this you can simplify your distribution by running the
+conversion during install. That way you don't have to have separate packages or
+even two copies of the code in your package distribution.
+
+Distutils supports this with a custom build command. Replace the
+``build_py`` command class with ``build_py_2to3`` under Python 3:
+
+.. code-block:: none
+
+    try:
+       from distutils.command.build_py import build_py_2to3 \
+            as build_py
+    except ImportError:
+       from distutils.command.build_py import build_py
+
+    setup(
+       ...
+       cmdclass = {'build_py': build_py}
+       )
+
+However, if you want to use this solution, you probably want to switch from
+Distutils to Distribute, that extends this concept further and integrates
+``2to3`` tighter into the development process.
+
+.. _usingdistribute:
+
+----------------------------------------------------------------------------
+Supporting multiple versions of Python with Distribute
+----------------------------------------------------------------------------
+
+.. index:: Distribute, Setuptools
+
+If you are using ``2to3`` to support both Python 2 and Python 3 you will find
+Distribute\ [#distribute]_ very helpful. It is a Distutils extension that is a
+Python 3 compatible fork of Phillip J. Eby's popular Setuptools package.
+Distribute adds the same ``2to3`` integration to the build command as Distutils
+does, so it will solve the distribution problems for you, but it also will help
+you during the development and testing of your package.
+
+When you use ``2to3`` to support both Python 2 and Python 3 you need to run
+``2to3`` every time you have made a change, before running the tests under
+Python 3. Distribute integrates this process into its ``test`` command, which
+means that any files you have updated will be copied to a build directory and
+converted with ``2to3`` before the tests are run in that build directory, all by
+just one command. After you have made a change to your code, you just run
+``python setup.py test`` for each version of Python you need to support to make
+sure that the tests run. This makes for a comfortable environment to do
+Python 3 porting while continuing to support Python 2.
+
+To install Distribute you need run the Distribute setup script from
+http://python-distribute.org/distribute_setup.py. You then run
+``distribute_setup.py`` with all Python versions where you want Distribute
+installed. Distribute is mainly compatible with Setuptools, so you can use
+Setuptools under Python 2 instead of Distribute but it's probably better to be
+consistent and use Distribute under Python 2 as well.
+    
+If you are using Distutils or Setuptools to install your software you already
+have a ``setup.py``. To switch from Setuptools to Distribute you don't have
+to do anything. To switch from Distutils to Distribute you need to change where
+you import the ``setup()`` function from. In Distutils you import from
+``distutils.core`` while in Setuptools and Distribute you import from
+``setuptools``.
+    
+If you don't have a ``setup.py`` you will have to create one. A typical example of a
+``setup.py`` would look something like this:
+
+.. literalinclude:: _tests/test-2.1/setup.py
+
+Explaining all the intricacies and possibilities in Distribute is outside the
+scope of this book. The full documentation for Distribute is on
+http://packages.python.org/distribute.
+
+Running tests with Distribute
+=============================
+
+.. index:: testing
+
+Once you have Distribute set up to package your module you need to use
+Distribute to run your tests. You can tell Distribute where to look for tests to
+run by adding the parameter ``test_suite`` to the ``setup()`` call. It can
+either specify a module to run, a test class to run, or a function that returns
+a ``TestSuite`` object to run. Often you can set it to the same as the base
+package name. That will make Distribute look in the package for tests to run. If
+you also have separate files that should be run as ``DocTests`` then Distribute
+will not find them automatically. In those cases it's easiest to make a function
+that returns a ``TestSuite`` with all the tests.
+
+.. literalinclude:: _tests/test-2.2/py3example/tests.py
+
+We then specify that function in the ``setup()``:
+
+.. literalinclude:: _tests/test-2.2/setup.py
+
+You can now run your tests with ``python setup.py test``.
+
+Running 2to3 with Distribute
+============================
+
+.. index:: trove classifier
+
+Once you have the tests running under Python 2, you can add the ``use_2to3``
+keyword options to ``setup()`` and start running the tests with Python 3.
+Also add ``"Programming Language :: Python :: 3"`` to the list
+of classifiers. This tells the CheeseShop and your users that you support
+Python 3.
+
+.. literalinclude:: _tests/test-2.3/setup.py
+
+Under Python 3, the ``test`` command will now first copy the files to a build
+directory and run ``2to3`` on them. It will then run the tests from the build
+directory. Under Python 2, the ``use_2to3`` option will be ignored.
+
+Distribute will convert all Python files and also all doctests in Python
+files. However, if you have doctests located in separate text files, these
+will not automatically be converted. By adding them to the 
+``convert_2to3_doctests`` option Distribute will convert them as 
+well. 
+
+To use additional fixers, the parameter ``use_2to3_fixers`` can be set
+to a list of names of packages containing fixers. This can be used both for
+the explicit fixers included in ``2to3`` and external fixers, such as the fixers
+needed if you use the Zope Component Architecture.
+
+.. literalinclude:: _tests/test-2.5/setup.py
+
+.. ATTENTION::
+
+    When you make changes to ``setup.py``, this may change which files get
+    converted. The conversion process will not know which files was
+    converted during the last run, so it doesn't know that a file which during
+    the last run was just copied now should be copied and converted. Therefore
+    you often have to delete the whole build directory 
+    after making changes to ``setup.py``.
+
+You should now be ready to try to run the tests under Python 3 by running
+``python3 setup.py test``. Most likely some of the tests will fail, but as long
+as the ``2to3`` process works and the tests run, even if they fail, then you
+have come a long way towards porting to Python 3. It's now time to look into
+fixing those failing tests. Which leads us into discussing the common migration
+problems.
+
+.. rubric:: Footnotes
+
+.. [#cheeseshop] `http://pypi.python.org/ <http://pypi.python.org/>`_
+.. [#distribute] `http://pypi.python.org/pypi/distribute <http://pypi.python.org/pypi/distribute>`_

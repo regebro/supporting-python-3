@@ -1,0 +1,17 @@
+>>> from mixin import ComparableMixin
+
+>>> class Orderable(ComparableMixin):
+...
+...     def __init__(self, firstname, lastname):
+...         self.first = firstname
+...         self.last = lastname
+...
+...     def _cmpkey(self):
+...         return (self.last, self.first)
+...
+...     def __repr__(self):
+...         return "%s %s" % (self.first, self.last)
+...
+>>> sorted([Orderable('Donald', 'Duck'), 
+...         Orderable('Paul', 'Anka')])
+[Paul Anka, Donald Duck]

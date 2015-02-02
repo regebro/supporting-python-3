@@ -1,0 +1,3 @@
+>>> from makebytes import b
+>>> b('GIF89a')
+'GIF89a'

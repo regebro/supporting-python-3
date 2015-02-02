@@ -1,0 +1,6 @@
+>>> import socket
+>>> try:
+...     socket.gethostbyname("www.python.rog")
+...     raise AssertionError("gaierror exception was not raised")
+... except socket.gaierror:
+...     pass

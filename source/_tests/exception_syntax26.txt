@@ -1,0 +1,7 @@
+>>> import sys
+>>> try:
+...     raise Exception("Something happened")
+... except Exception:
+...     e = sys.exc_info()[1]
+...     print(e.args[0])
+Something happened

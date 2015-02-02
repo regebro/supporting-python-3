@@ -1,0 +1,93 @@
+{% extends "!layout.html" %}
+{% block header %}
+    <div class="header-wrapper">
+      <div class="header">
+        {%- if logo %}
+          <p class="logo"><a href="{{ pathto(master_doc) }}">
+            <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+          </a></p>
+        {%- endif %}
+        {%- block headertitle %}
+        <h1><a href="{{ pathto(master_doc) }}">{{ shorttitle|e }}</a></h1>
+        {%- endblock %}
+        <div class="rel">
+          <a href="toc.html" title="Table of Contents">Contents</a> |
+          {%- for rellink in rellinks|reverse %}
+          <a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}"
+             {{ accesskey(rellink[2]) }}>{{ rellink[3] }}</a>
+          {%- if not loop.last %}{{ reldelim2 }}{% endif %}
+          {%- endfor %}
+        </div>
+       </div>
+    </div>
+{% endblock %}
+
+{%- block sidebartoc %}
+{%- endblock %}
+{%- block sidebarsearch %}
+    <blockquote>The book gets right to the point, without a lot of fluff and filler</blockquote>
+    <a href="http://www.doughellmann.com/articles/bookreviews/porting3.html">Doug Hellmann</a>
+    <blockquote>A concise, well-organised and complete reference</blockquote>
+    <a href="http://www.mechanicalcat.net/richard/log/Python/Review__Lennart_Regebro_s__Porting_to_Python_3">Richard Jones</a>
+    <br/>
+    <br/>
+    <h2>Buy it here!</h2>
+    <img src="_static/PortingtoPython3-2nd1.0-front-small.png" style="margin-right: 20px; float: left; width: 27%;">
+    <p><strong>Choose your own price </strong><a href="https://gumroad.com/l/python3">for a set of PDF files suitable for screen, printing, tablets and phones.</a></p>
+    <p style="margin-top: 10px;"><strong>$4.45 </strong><a href="https://www.createspace.com/4312357">for a paperback version.</a>
+    (Also available from <a href="http://www.amazon.com/Porting-Python-3--depth-guide/dp/1490362223/">Amazon)</li>
+    <br/>
+    <h3 style="margin-top: 1.5em;">{{ _('Search the book') }}</h3>
+    <form class="search" action="{{ pathto('search') }}" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="{{ _('Go') }}" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+      {{ _('Enter search terms or a module, class or function name.') }}
+    </p>
+{%- endblock %}
+{%- block extrahead %}
+    <meta name="DC.language" content="en"/>
+    <meta name="DC.creator" content="Lennart Regebro"/>
+    <meta name="DC.subject" content="python porting conversion python3 2to3" />
+    <meta name="keywords" content="python porting conversion python3 2to3" />
+{% endblock %}
+
+{% block footer %}
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <a href="toc.html" title="Table of Contents">Contents</a> |
+          {%- for rellink in rellinks|reverse %}
+          <a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}"
+             {{ accesskey(rellink[2]) }}>{{ rellink[3] }}</a>
+          {%- if not loop.last %}{{ reldelim2 }}{% endif %}
+          {%- endfor %}
+          {%- if show_source and has_source and sourcename %}
+            <br/>
+            <a href="{{ pathto('_sources/' + sourcename, true)|e }}"
+               rel="nofollow">{{ _('Show Source') }}</a>
+          {%- endif %}
+        </div>
+
+        <div class="right">
+    {%- if show_copyright %}
+      {%- if hasdoc('copyright') %}
+        {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+      {%- else %}
+        {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
+      {%- endif %}
+    {%- endif %}
+    {%- if last_updated %}
+      {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+    {%- endif %}
+    {%- if show_sphinx %}
+      {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
+    {%- endif %}
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+{% endblock %}

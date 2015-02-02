@@ -1,0 +1,4 @@
+>>> def bprint(data):
+...     if not isinstance(data, str):
+...         data = data.decode()
+...     print(data.strip())

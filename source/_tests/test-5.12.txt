@@ -1,0 +1,5 @@
+>>> from __future__ import unicode_literals
+>>> type(b"Binary data")
+<type 'str'>
+>>> type("Unicode text")
+<type 'unicode'>

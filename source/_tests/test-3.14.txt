@@ -1,0 +1,8 @@
+>>> from bites import Bites
+>>> Bites([71, 73, 70, 56, 57, 97]).itemint(2)
+70
+>>> binary_data = Bites(open('maybe_a.gif', 'rb').read())
+>>> binary_data.itemint(2)
+70
+>>> print([x for x in Bites('GIF89a').iterint()])
+[71, 73, 70, 56, 57, 97]

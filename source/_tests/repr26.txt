@@ -1,0 +1,5 @@
+>>> repr(sorted)
+'<built-in function sorted>'
+
+>>> repr(2+3)
+'5'

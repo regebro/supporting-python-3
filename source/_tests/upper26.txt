@@ -1,0 +1,5 @@
+>>> 'Dinsdale!'.upper()
+'DINSDALE!'
+
+>>> str.upper('Dinsdale!')
+'DINSDALE!'

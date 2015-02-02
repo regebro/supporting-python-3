@@ -1,0 +1,4 @@
+>>> import socket
+>>> socket.gethostbyname("www.python.rog")
+Traceback (most recent call last):
+socket.gaierror: [Errno -2] Name or service not known

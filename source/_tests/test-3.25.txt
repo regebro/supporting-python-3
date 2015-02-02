@@ -1,0 +1,3 @@
+>>> import socket
+>>> shouldRaise(socket.gaierror,
+...     socket.gethostbyname, "www.python.rog")

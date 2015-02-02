@@ -1,0 +1,3 @@
+>>> from makeunicode import u
+>>> u('GIF89a')
+u'GIF89a'

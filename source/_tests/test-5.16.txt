@@ -1,0 +1,8 @@
+>>> try:
+...    f = 1/0
+... except ZeroDivisionError, e:
+...    for m in e:
+...        print m
+...    print e[0]
+integer division or modulo by zero
+integer division or modulo by zero

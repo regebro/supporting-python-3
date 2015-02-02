@@ -1,0 +1,4 @@
+>>> import io
+>>> infile = io.open('UTF-8.txt', 'rt', encoding='UTF-8')
+>>> print(infile.read())
+It wörks

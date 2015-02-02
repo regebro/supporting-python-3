@@ -1,0 +1,3 @@
+>>> dict = {'Adam': 'Eve', 'John': 'Yoko', 'Donald': 'Daisy'}
+>>> 'Dilbert' in dict
+False

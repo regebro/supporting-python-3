@@ -1,0 +1,5 @@
+>>> `sorted`
+'<built-in function sorted>'
+
+>>> `2+3`
+'5'

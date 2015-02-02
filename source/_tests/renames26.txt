@@ -1,0 +1,17 @@
+>>> import sys
+>>> if sys.version < '3':
+...     defaults_attr = 'func_defaults'
+...     get_method_class = lambda x: x.im_class
+... else:
+...     defaults_attr = '__defaults__'
+...     get_method_class = lambda x: x.__self__.__class__
+>>> class Test(object):
+...     def hasdefaults(a=1, b=2):
+...         pass
+
+>>> method = Test().hasdefaults
+>>> getattr(method, defaults_attr)
+(1, 2)
+
+>>> get_method_class(method)
+<class 'Test'>

@@ -1,0 +1,7 @@
+>>> from contextlib import closing
+>>> import urllib
+>>>
+>>> book_url = 'http://python3porting.com/'
+>>> with closing(urllib.urlopen(book_url)) as page:
+...     print len(page.readlines())
+165

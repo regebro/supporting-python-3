@@ -1,0 +1,4 @@
+>>> from functools import cmp_to_key
+>>> def compare(a, b): return cmp(a[1:], b[1:])
+>>> sorted(['Adam', 'Donald', 'John'], key=cmp_to_key(compare))
+['Adam', 'John', 'Donald']

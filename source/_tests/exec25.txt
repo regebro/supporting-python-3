@@ -1,0 +1,5 @@
+>>> g_dict={}
+>>> l_dict={}
+>>> exec "v = 3" in g_dict, l_dict
+>>> l_dict['v']
+3

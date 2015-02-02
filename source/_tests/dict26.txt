@@ -1,0 +1,18 @@
+>>> d = {'key1': 'value1',
+...      'key2': 'value2',
+...      'key3': 'value3',
+... }
+
+>>> try:
+...     values = d.itervalues()
+... except AttributeError:
+...     values = d.values()
+
+>>> isinstance(values, list)
+False
+
+>>> for value in values:
+...     print(value)
+value3
+value2
+value1

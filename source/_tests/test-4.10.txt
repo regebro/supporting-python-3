@@ -1,0 +1,3 @@
+>>> dict = {'Adam': 'Eve', 'John': 'Yoko', 'Donald': 'Daisy'}
+>>> dict.has_key('Dilbert')
+False

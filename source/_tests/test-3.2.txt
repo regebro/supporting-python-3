@@ -1,0 +1,16 @@
+>>> class Orderable(object):
+...
+...     def __init__(self, firstname, lastname):
+...         self.first = firstname
+...         self.last = lastname
+...
+...     def __lt__(self, other):
+...         return ("%s, %s" % (self.last, self.first) <
+...                 "%s, %s" % (other.last, other.first))
+...
+...     def __repr__(self):
+...         return "%s %s" % (self.first, self.last)
+...
+>>> sorted([Orderable('Donald', 'Duck'),
+...         Orderable('Paul', 'Anka')])
+[Paul Anka, Donald Duck]

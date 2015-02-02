@@ -1,0 +1,6 @@
+>>> dict = {'Adam': 'Eve', 'John': 'Yoko', 'Donald': 'Daisy'}
+>>> for x in dict:
+...     print '%s + %s == True' % (x, dict[x])
+Donald + Daisy == True
+John + Yoko == True
+Adam + Eve == True

@@ -1,0 +1,4 @@
+>>> def allcombinations(starters, endings):
+...     for s in starters:
+...         for e in endings:
+...             yield s+e

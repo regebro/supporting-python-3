@@ -1,0 +1,11 @@
+>>> from zope.interface import Interface, implementer
+>>>
+>>> class IMyInterface(Interface):
+...     def amethod():
+...         '''This is just an example'''
+...
+>>> @implementer(IMyInterface)
+... class MyClass(object):
+...
+...     def amethod(self):
+...         return True

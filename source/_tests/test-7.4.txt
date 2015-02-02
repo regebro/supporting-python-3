@@ -1,0 +1,5 @@
+>>> list(x for x in 'Silly Walk')
+['S', 'i', 'l', 'l', 'y', ' ', 'W', 'a', 'l', 'k']
+
+>>> [x for x in 'Silly Walk']
+['S', 'i', 'l', 'l', 'y', ' ', 'W', 'a', 'l', 'k']

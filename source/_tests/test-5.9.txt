@@ -1,0 +1,11 @@
+>>> try:
+...     from urllib.request import urlopen
+...     from urllib.parse import urlparse
+... except ImportError:
+...     from urlparse import urlparse
+...     from urllib import urlopen
+...
+>>> url = 'http://docs.python.org/library/'
+>>> parts = urlparse(url)
+>>> parts = parts._replace(path='/3.0'+parts.path)
+>>> page = urlopen(parts.geturl())

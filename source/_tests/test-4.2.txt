@@ -1,0 +1,7 @@
+>>> def compare(a, b):
+...     """Comparison that ignores the first letter"""
+...     return cmp(a[1:], b[1:])
+>>> names = ['Adam', 'Donald', 'John']
+>>> names.sort(cmp=compare)
+>>> names
+['Adam', 'John', 'Donald']

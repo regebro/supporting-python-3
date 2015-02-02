@@ -1,0 +1,7 @@
+>>> def keyfunction(item):
+...     """Sorting on descending length and alphabetically"""
+...     return -len(item), item
+>>> names = ['Adam', 'Donald', 'John']
+>>> names.sort(key=keyfunction)
+>>> names
+['Donald', 'Adam', 'John']

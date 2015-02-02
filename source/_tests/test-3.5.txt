@@ -1,0 +1,4 @@
+>>> def ignorecase(x):
+...     return x.lower()
+>>> sorted(['ant', 'Aardvark', 'banana', 'Dingo'], key=ignorecase)
+['Aardvark', 'ant', 'banana', 'Dingo']

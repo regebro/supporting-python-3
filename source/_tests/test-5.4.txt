@@ -1,0 +1,7 @@
+>>> import sys
+>>> try:
+...     a = 1/'0'
+... except (ZeroDivisionError, TypeError):
+...     e = sys.exc_info()[1]
+...     print(e.args[0])
+unsupported operand type(s) for /: 'int' and 'str'

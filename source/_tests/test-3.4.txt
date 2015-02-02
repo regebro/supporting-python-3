@@ -1,0 +1,4 @@
+>>> def ignorecase(a, b):
+...     return cmp(a.lower(), b.lower())
+>>> sorted(['ant', 'Aardvark', 'banana', 'Dingo'], cmp=ignorecase)
+['Aardvark', 'ant', 'banana', 'Dingo']

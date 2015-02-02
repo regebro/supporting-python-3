@@ -1,0 +1,4 @@
+>>> names = ['Adam', 'Donald', 'John']
+>>> names.sort(key=lambda x: x[1:], reverse=True)
+>>> names
+['Donald', 'John', 'Adam']

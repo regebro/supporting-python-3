@@ -1,0 +1,6 @@
+>>> def allcombinations(starters, endings):
+...     result = []
+...     for s in starters:
+...         for e in endings:
+...             result.append(s+e)
+...     return result

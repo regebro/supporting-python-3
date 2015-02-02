@@ -1,0 +1,5 @@
+>>> try:
+...     a = 1/0
+... except ZeroDivisionError, e:
+...     print e.args[0]
+integer division or modulo by zero

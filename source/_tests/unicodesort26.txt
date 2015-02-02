@@ -1,0 +1,7 @@
+>>> from functools import cmp_to_key
+>>> import locale
+>>> locale.setlocale(locale.LC_ALL, 'sv_SE.UTF-8')
+'sv_SE.UTF-8'
+>>> corpus = ["art", "Älg", "ærgeligt", "Aardvark"]
+>>> sorted(corpus, key=cmp_to_key(locale.strcoll))
+['Aardvark', 'art', 'Älg', 'ærgeligt']

@@ -1,0 +1,23 @@
+>>> import os, sys, subprocess, shutil
+>>> curdir = os.path.abspath(os.curdir)
+>>> os.chdir('./source/_tests/test-2.4')
+>>> proc = subprocess.Popen([sys.executable, 'setup.py', 'test'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+>>> print(proc.stdout.read().decode())
+running test
+...
+running build_ext
+<BLANKLINE>
+
+>>> print(proc.stderr.read().decode())
+test_2to3 (py3example.tests.TestCase1) ... ok
+<BLANKLINE>
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+<BLANKLINE>
+OK
+<BLANKLINE>
+
+
+>>> if os.path.exists('build'):
+...     shutil.rmtree('build')
+>>> os.chdir(curdir)

@@ -1,0 +1,11 @@
+>>> import math
+>>> def my_round(x, d=0):
+...     p = 10 ** d
+...     return float(math.floor((x * p) + math.copysign(0.5, x)))/p
+
+>>> my_round(1.5)
+2.0
+>>> my_round(2.5)
+3.0
+>>> my_round(10.0/3, 0)
+3.0

@@ -1,0 +1,7 @@
+>>> names = ['Adam', 'Donald', 'John']
+>>> # Alphabetical sort
+>>> names.sort()
+>>> # Long names should go first
+>>> names.sort(key=lambda x: len(x), reverse=True)
+>>> names
+['Donald', 'Adam', 'John']

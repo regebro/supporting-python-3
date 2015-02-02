@@ -1,0 +1,12 @@
+>>> import sys
+>>> if sys.version < '2.4':
+...    def sorted(data, key):
+...        mapping = {}
+...        for x in data:
+...            mapping[key(x)] = x
+...        keys = mapping.keys()
+...        keys.sort()
+...        return [mapping[x] for x in keys]
+>>> data = ['ant', 'Aardvark', 'banana', 'Dingo']
+>>> sorted(data, key=str.lower)
+['Aardvark', 'ant', 'banana', 'Dingo']

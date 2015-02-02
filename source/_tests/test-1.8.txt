@@ -1,0 +1,6 @@
+>>> dict = {'Adam': 'Eve', 'John': 'Yoko', 'Donald': 'Daisy'}
+>>> dict.keys()
+['Donald', 'John', 'Adam']
+
+>>> dict.iterkeys() # doctest: +ELLIPSIS
+<dictionary-keyiterator object at 0x...>

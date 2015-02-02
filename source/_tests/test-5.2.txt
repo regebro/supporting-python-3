@@ -1,0 +1,5 @@
+>>> try:
+...     a = 1/"Dinsdale"
+... except (ZeroDivisionError, TypeError):
+...     print "You can't divide by zero or by strings!"
+You can't divide by zero or by strings!

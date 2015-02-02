@@ -1,0 +1,14 @@
+>>> raise "This is a string exception", 3, traceback
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+This is a string exception: 3
+
+>>> raise Exception, "Something happened", traceback
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+Exception: Something happened
+
+>>> raise Exception("Something happened"), None, traceback
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+Exception: Something happened

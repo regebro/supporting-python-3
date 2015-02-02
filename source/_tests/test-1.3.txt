@@ -1,0 +1,4 @@
+>>> raise Exception("Something went wrong!")
+Traceback (most recent call last):
+...
+Exception: Something went wrong!

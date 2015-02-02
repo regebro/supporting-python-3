@@ -1,0 +1,4 @@
+>>> import codecs
+>>> infile = codecs.open('UTF-8.txt', 'r', encoding='UTF-8')
+>>> print(infile.read())
+It wörks

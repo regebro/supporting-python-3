@@ -1,0 +1,8 @@
+>>> e = Exception('arg1', 'arg2')
+>>> e[1]
+'arg2'
+>>> for a in e:
+...   print a
+... 
+arg1
+arg2

@@ -1,0 +1,7 @@
+>>> def keyfunction(item):
+...     """Key for comparison that ignores the first letter"""
+...     return item[1:]
+>>> names = ['Adam', 'Donald', 'John']
+>>> names.sort(key=keyfunction)
+>>> names
+['Adam', 'John', 'Donald']

@@ -1,0 +1,10 @@
+>>> def afunction():
+...     pass
+
+>>> any("__call__" in klass.__dict__ for 
+...     klass in type(afunction).__mro__)
+True
+
+>>> import collections
+>>> isinstance(afunction, collections.Callable)
+True

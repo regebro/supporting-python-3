@@ -1,0 +1,7 @@
+>>> try: 
+...     from sys import intern
+... except ImportError:
+...     pass
+
+... something = intern('something')
+'something'

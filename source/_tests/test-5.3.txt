@@ -1,0 +1,5 @@
+>>> try:
+...     a = 1/'0'
+... except (ZeroDivisionError, TypeError) as e:
+...     print(e.args[0])
+unsupported operand type(s) for /: 'int' and 'str'
