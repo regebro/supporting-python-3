@@ -1,7 +1,8 @@
-import unittest
-import doctest
-from test_fixers import IndentFixerTest, Name1FixerTest, Name2FixerTest, ConstantFixerTest
 from shouldraise import shouldRaise
+from test_fixers import IndentFixerTest, Name1FixerTest, Name2FixerTest, ConstantFixerTest
+import doctest
+import sys
+import unittest
 
 suite = doctest.DocFileSuite('test-1.1.txt',
                              'test-1.3.txt',
