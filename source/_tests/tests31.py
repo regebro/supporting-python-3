@@ -82,7 +82,7 @@ suite = doctest.DocFileSuite('test-1.1.txt',
                              'test-7.7.txt',
                              'test-7.8.txt',
                              'test-7.9.txt',
-                             'test-7.11.txt', 
+                             'test-7.11.txt',
                              'buffer26.txt',
                              'callable26.txt',
                              'callable30.txt',
@@ -110,7 +110,7 @@ suite = doctest.DocFileSuite('test-1.1.txt',
                              optionflags=doctest.ELLIPSIS,
                              globs={'traceback': traceback,
                                     'shouldRaise': shouldRaise,
-                                    }                             
+                                    }
                              )
 
 suite.addTests(unittest.makeSuite(IndentFixerTest))
@@ -118,5 +118,6 @@ suite.addTests(unittest.makeSuite(Name1FixerTest))
 suite.addTests(unittest.makeSuite(Name2FixerTest))
 suite.addTests(unittest.makeSuite(ConstantFixerTest))
 runner = unittest.TextTestRunner()
-runner.run(suite)
+results = runner.run(suite)
+sys.exit(1 if results.failures else 0)
 

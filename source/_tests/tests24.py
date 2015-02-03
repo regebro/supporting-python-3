@@ -53,4 +53,7 @@ suite = doctest.DocFileSuite('test-1.2.txt',
                              )
 
 runner = unittest.TextTestRunner()
-runner.run(suite)
+results = runner.run(suite)
+
+if results.failures:
+    sys.exit(1)
