@@ -73,13 +73,13 @@ suite = doctest.DocFileSuite('test-1.1.txt',
                              #'test-5.18.txt', Doesn't work because of a bug in doctests.
                              'test-6.1.txt',
                              'test-7.7.txt',
-                             'test-7.11.txt', 
+                             'test-7.11.txt',
                              'csv26.txt',
                              'upper26.txt',
                              'map26.txt',
                              optionflags=doctest.ELLIPSIS,
                              globs={'shouldRaise': shouldRaise,
-                                    }                             
+                                    }
                              )
 
 suite.addTests(unittest.makeSuite(IndentFixerTest))
@@ -87,4 +87,7 @@ suite.addTests(unittest.makeSuite(Name1FixerTest))
 suite.addTests(unittest.makeSuite(Name2FixerTest))
 suite.addTests(unittest.makeSuite(ConstantFixerTest))
 runner = unittest.TextTestRunner()
-runner.run(suite)
+results = runner.run(suite)
+
+if results.failures:
+    sys.exit(1)

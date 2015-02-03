@@ -1,4 +1,5 @@
 #!/bin/bash
+
 PYTHON23=`which python23`
 PYTHON23=${PYTHON23:-`which python2.3`}
 PYTHON23=${PYTHON23:-/opt/python23/bin/python}
@@ -24,7 +25,7 @@ then
     PYTHON27=python27/bin/python
 fi
 PYTHON27=${PYTHON27:-`which python27`}
-PYTHON27=${PYTHON26:-`which python2.7`}
+PYTHON27=${PYTHON27:-`which python2.7`}
 PYTHON27=${PYTHON27:-/opt/python27/bin/python}
 
 if [ -a python31/bin/python ]
@@ -59,6 +60,8 @@ PYTHON34=${PYTHON34:-`which python34`}
 PYTHON34=${PYTHON34:-`which python3.4`}
 PYTHON34=${PYTHON34:-/opt/python34/bin/python}
 
+# Fail on error
+set -e
 
 echo "##### PY23 #######"
 $PYTHON23 source/_tests/tests23.py

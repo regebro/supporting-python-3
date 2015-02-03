@@ -3,6 +3,8 @@ import doctest
 import types
 import sys
 
+fail = False
+
 # Having them all in one suite doesn't work in Python 2.3.
 for testfile in ['test-3.6.txt',
                  'test-3.11.txt',
@@ -21,6 +23,11 @@ for testfile in ['test-3.6.txt',
     suite = doctest.DocTestSuite('testmodule')
 
     runner = unittest.TextTestRunner()
-    runner.run(suite)
+    results = runner.run(suite)
+    if results.failures:
+        fail = True
 
 del sys.modules['testmodule']
+
+if fail:
+    sys.exit(1)
