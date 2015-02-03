@@ -33,6 +33,9 @@ Testing setup
 (This is all stupid and needs to change. We should probably use Spiny.
 We can't use Tox, because it doesn't support old Python versions.)
 
+This script tests locales, for testing purposes the locale sv_SE.UTF-8
+must be available.
+
 The script tries to find system wide python installations.
 
 On Ubuntu, you can get all these linux installations from the ppa:fkrull/deadsnakes
