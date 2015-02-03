@@ -33,11 +33,14 @@ Testing setup
 (This is all stupid and needs to change. We should probably use Spiny.
 We can't use Tox, because it doesn't support old Python versions.)
 
-Python 2.3, 2.4 and 2.5 must be installed in ``/opt/python23`` etc (or paths
-changed in runtest.sh)
+The script tries to find system wide python installations.
 
-Python 2.6, 2.7, 3.1, 3.1 and 3.3 must be installed in ``./python26``,
-``./python27``, etc (virtualenvs are fine).
+On Ubuntu, you can get all these linux installations from the ppa:fkrull/deadsnakes
+
+If this fails, it looks for Python 2.3, 2.4, 2,5 in ``/opt/python23`` etc.
+
+Python 2.5, 2.7, 3.1, 3.2, 3.3, 3.4 must be installed in ``./python26``,
+...
 
 In Python 2.6 and above also do this::
 
