@@ -74,7 +74,7 @@ It's always a good idea to publish information on your plans for porting on your
 software's homepage or in the description of the package on the CheeseShop.
 Include a list of your dependencies that aren't ported. That way your users can
 see if there is something they can help with. Open source all is about
-programmers helping each other; both using and contributing to each others
+programmers helping each other; both using and contributing to each other's
 software. A porting effort is no different.
 
 And even if you aren't porting right now, there are things you can do already.
