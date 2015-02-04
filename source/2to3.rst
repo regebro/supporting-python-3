@@ -208,7 +208,7 @@ just one command. After you have made a change to your code, you just run
 sure that the tests run. This makes for a comfortable environment to do
 Python 3 porting while continuing to support Python 2.
 
-To install Distribute you need run the Distribute setup script from
+To install Distribute you need to run the Distribute setup script from
 http://python-distribute.org/distribute_setup.py. You then run
 ``distribute_setup.py`` with all Python versions where you want Distribute
 installed. Distribute is mainly compatible with Setuptools, so you can use
