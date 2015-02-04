@@ -5,7 +5,7 @@ Supporting Python 3: An in-depth guide
 **Supporting Python 3** doesn't have to be daunting. This book guides you
 through the process of porting your Python 2 code to Python 3, from choosing a
 porting strategy to solving your distribution issues. Using plenty of code
-examples is takes you cross the hurdles and shows you the new Python features.
+examples, it guides you across the hurdles and shows you the new Python features.
 
 Crowd funding successful!
 -------------------------
