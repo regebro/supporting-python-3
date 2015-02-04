@@ -89,7 +89,7 @@ using this already is if you need to support older versions.
 Python and its versions
 ---------------------------------------------------------------------------
 
-Since I started writing this book, Python 2.7 and Python 3.2 has been
+Since I started writing this book, Python 2.7 and Python 3.2 have been
 released. For the purposes of this book, Python 2.6 and Python 2.7 can be seen
 as equal. So most of the times the book says Python 2.6, you can read that as
 Python 2.6 or Python 2.7.
