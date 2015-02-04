@@ -65,7 +65,7 @@ that the timeline Guido set out is turning out to be true as major libraries
 have already been ported, allowing their dependents to make the switch
 themselves.
 
-While some might question the utility in moving to Python 2 code to Python 3,
+While some might question the utility in moving Python 2 code to Python 3,
 there are two things to keep in mind. One is that Python 3 is simply a nicer
 language than Python 2. While there are only a handful of major changes, it's
 all of the little changes that add up to make the experience of programming
