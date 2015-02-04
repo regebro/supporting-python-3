@@ -49,8 +49,8 @@ We also realized that we didn't want to leave our existing community behind and
 develop Python 3 only for new code. The development team knew as we created
 Python 3 that it was a superior language and so we wanted to share it with
 everyone by making sure they could bring their Python 2 code with them into
-their Python 3 work. From the beginning we made sure that changes we made could
-either be warned against in the worst case, and automated in the best.
+their Python 3 work. From the beginning we made sure that the changes we made
+could either be warned against in the worst case, and automated in the best.
 Techniques we learned and tools we developed were used to port Python's
 extensive standard library so as to learn from our own mistakes and make sure
 that other people could port their own code. We always kept in the back of our
