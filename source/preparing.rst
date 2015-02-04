@@ -10,7 +10,7 @@ changing things that are hard for ``2to3`` to port correctly. These are things
 you can do right now even if you don't plan to move to Python 3 yet and in some
 cases they will even speed up your code under Python 2.
 
-You might also want to read the chapter on :ref:`improving-chapter`, which 
+You might also want to read the chapter on :ref:`improving-chapter`, which
 contains many other improvements you can do to your code even before porting.
 
 ---------------------------------------------------------------------------
@@ -18,7 +18,7 @@ Run under Python 2.7.
 ---------------------------------------------------------------------------
 
 The first step in the porting process is to get your code running in Python 2.6
-or 2.7. It isn't very important which version you use here, but obviously the 
+or 2.7. It isn't very important which version you use here, but obviously the
 last Python 2 version makes the most sense, so if you can use Python 2.7,
 do so.
 
@@ -93,7 +93,7 @@ to get around that problem is to convert one of the integers to a float, or
 to add a decimal comma to one of the numbers.
 
 .. literalinclude:: _tests/test-1.6.txt
-    
+
 However, there is a neater way to do this and that is to enable the Python 3
 behavior. This is done via a ``__future__`` import also available since Python
 2.2.
@@ -212,7 +212,7 @@ used\ [#timsort]_. It's a stable algorithm, meaning that if two items are sorted
 as equal it will preserve the order of those items.
 
 You can also make a key function that returns a value that combines the two keys
-and sort in one go. This is surprisingly not always faster, you will have to 
+and sort in one go. This is surprisingly not always faster, you will have to
 test which solution is faster in your case, it depends on both the data and
 the key function.
 
@@ -225,7 +225,7 @@ Python 2.3 and use that conditionally instead of the ``sorted()`` builtin in
 with Python 2.4 and later.
 
 .. literalinclude:: _tests/test-3.6.txt
-    
+
 Python 2.4 is over five years old now, so it is quite unlikely that you would
 need to support Python 2.3.
 
@@ -233,15 +233,15 @@ need to support Python 2.3.
 
     Running Python with the ``-3`` option will only warn you if you use the
     ``cmp`` parameter explicitly::
-    
+
         >>> l.sort(cmp=cmpfunction)
-        __main__:1: DeprecationWarning: the cmp argument is not 
+        __main__:1: DeprecationWarning: the cmp argument is not
         supported in 3.x
-        
+
     But it will not warn if you use it like this::
-    
+
         >>> l.sort(cmpfunction)
-        
+
     So this syntax may slip through. In these cases you get a ``TypeError: must
     use keyword argument for key function`` when running the code under
     Python 3.
@@ -298,8 +298,8 @@ returns ``NotImplemented`` then Python will try to ask the other objects
     comparison helpers that will convert a greater than call like
     ``self.__gt__(other)`` into ``return other < self``. But then you are
     calling ``other.__lt__(self)`` and if it returns ``NotImplemented`` then
-    Python will try ``self.__gt__(other)`` again and you get infinite recursion!    
-    
+    Python will try ``self.__gt__(other)`` again and you get infinite recursion!
+
 So implementing a good set of rich comparison operators that behave properly in
 all cases is not difficult once you understand all the cases, but getting to
 grips with that is not entirely trivial. You can do it in many different ways,
@@ -313,7 +313,7 @@ decorator from Python 3.2 is a nice solution as well, and it can be copied and
 used other Python versions as well. But since it uses class decorators it will
 not work in version below Python 2.6.
 
-To use the mixin above you need to implement a ``_cmpkey()`` method that 
+To use the mixin above you need to implement a ``_cmpkey()`` method that
 returns a key of objects that can be compared, similar to the ``key()``
 function used when sorting. The implementation could look like this:
 
@@ -325,7 +325,7 @@ something that isn't comparable with the value that ``self._cmpkey()``
 returns. This means that every object that has a ``_cmpkey()`` that returns
 a tuple will be comparable with all other objects that also has a ``_cmpkey()``
 that returns a tuple and most importantly, if it isn't comparable, the
-operators will fall back to asking the other object if it knows how to 
+operators will fall back to asking the other object if it knows how to
 compare the two objects. This way you have an object who has the maximum
 chance of meaningful comparisons.
 
@@ -349,7 +349,7 @@ that compare equal should have the same hash value. It must stay the same
 over the whole lifetime of the object, which is why mutable objects should
 set ``__hash__ = None`` to mark them as unhashable.
 
-If you are using the ``_cmpkey()`` method of implementing comparison 
+If you are using the ``_cmpkey()`` method of implementing comparison
 operators mentioned above, then implementing ``__hash__()`` is very easy:
 
 .. literalinclude:: _tests/test-3.31.txt
@@ -415,11 +415,11 @@ they return iterators, which saves memory and time when using large
 dictionaries.
 
 .. literalinclude:: _tests/test-1.8.txt
-    
+
 In Python 3 the standard ``keys()``, ``values()`` and ``items()`` return
 dictionary views, which are very similar to the iterators of Python 2. As there
 is no longer any need for the iterator variations of these methods
-they have been removed. 
+they have been removed.
 
 ``2to3`` will convert the usage of the
 iterator methods to the standard methods.

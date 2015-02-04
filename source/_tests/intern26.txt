@@ -1,4 +1,4 @@
->>> try: 
+>>> try:
 ...     from sys import intern
 ... except ImportError:
 ...     pass

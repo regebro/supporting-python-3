@@ -1,6 +1,6 @@
 >>> import urllib
 >>> import urlparse
->>> 
+>>>
 >>> url = 'http://docs.python.org/library/'
 >>> parts = urlparse.urlparse(url)
 >>> parts = parts._replace(path='/3.0'+parts.path)

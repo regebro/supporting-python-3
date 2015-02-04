@@ -6,12 +6,12 @@
 About this book
 ===========================================================================
 
-This book is written in reStructuredText\ [#rest]_, typeset with 
-Sphinx\ [#sphinx]_ and LaTeX\ [#latex]_ and printed on 
-CreateSpace\ [#createspace]_. The typefaces used are TeX Gyre Schola for the 
+This book is written in reStructuredText\ [#rest]_, typeset with
+Sphinx\ [#sphinx]_ and LaTeX\ [#latex]_ and printed on
+CreateSpace\ [#createspace]_. The typefaces used are TeX Gyre Schola for the
 main text, DejaVu Sans Mono for the code and Flux Bold for headings.
 
-The cover photo is taken by **Emmanuel "Tambako" Keller**, 
+The cover photo is taken by **Emmanuel "Tambako" Keller**,
 http://www.flickr.com/photos/tambako/
 
 Almost all the code examples are unit tested, but there are likely to be many

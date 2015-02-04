@@ -1,6 +1,6 @@
 >>> import urllib.request, urllib.parse, urllib.error
 >>> import urllib.parse
->>> 
+>>>
 >>> url = 'http://docs.python.org/library/'
 >>> parts = urllib.parse.urlparse(url)
 >>> parts = parts._replace(path='/3.0'+parts.path)

@@ -7,7 +7,7 @@ Supporting Python 2 and 3 without 2to3 conversion
 Although the official documentation for Python 3 discourages writing code for
 both Python 2 and Python 3, in some cases it is desirable. Especially if you
 can drop support for Python 2.5 and earlier, since Python 2.6 introduces quite
-a lot of forwards compatibility. 
+a lot of forwards compatibility.
 
 It's possible to make the same code run under earlier versions of Python as
 well, but then you start getting into the "contorted" writing style the
@@ -126,7 +126,7 @@ locations and if that fails you import from the Python 2 locations. For modules
 that have been renamed, you can just import them as the new name.
 
 .. literalinclude:: _tests/test-5.6.txt
-    
+
 Some of the new modules are mergers of several old modules and in that case the
 above will not work if you need things from several of the old modules. You can
 also not do this with modules that have sub-modules. ``import httplib as
@@ -136,7 +136,7 @@ import each name you use separately. This often means you need to make changes
 to your code as well. In Python 2 retrieving a web page looks like this:
 
 .. literalinclude:: _tests/test-5.7.txt
-    
+
 After conversion with ``2to3`` it will look like this:
 
 .. literalinclude:: _tests/test-5.8.txt
@@ -158,7 +158,7 @@ Integer incompatibilities
 There are two big changes in integer handling in Python 3. The first one is
 that the ``int`` and the ``long`` types have been merged. That means that you
 can't specify that an integer should be long by adding the ``L`` suffix any
-more. ``1L`` is a syntax error in Python 3. 
+more. ``1L`` is a syntax error in Python 3.
 
 If you have to have an integer being a ``long`` in Python 2 and still be
 compatible with Python 3, the following code will solve it. It defines up a
@@ -166,7 +166,7 @@ compatible with Python 3, the following code will solve it. It defines up a
 can then be used explicitly to make sure the integer is a ``long``.
 
 .. literalinclude:: _tests/test-5.10.txt
-    
+
 Another change is that the syntax for octal literals has changed. In Python 2
 any number starting with a ``0`` is an octal, which can be confusing if you
 decide to format your numbers by starting them with zeros. In Python 3 the
@@ -202,7 +202,7 @@ Here, only supporting Python 3.3 will make things much easier for you, because
 in Python 3.3, the ``u''`` literal is back! In that case you can mostly
 ignore this section.
 
-But if you need to support Python 3.1 or 3.2, 
+But if you need to support Python 3.1 or 3.2,
 the best way to do this is to make a Unicode string maker function just like the
 ``b()`` function in :ref:`Common migration problems` but for Unicode strings
 instead of binary ``bytes``. The natural name for this function is of course
@@ -239,7 +239,7 @@ Unicode literals:
 
 Both with the ``__future__`` import and the ``u()`` function the the binary data
 type is still called ``str`` and the text type is still called ``unicode`` under
-Python 2, while under Python 3 they are called ``bytes`` and ``str``. 
+Python 2, while under Python 3 they are called ``bytes`` and ``str``.
 
 The best way around this is to define two variables; ``text_type`` and
 ``binary_type``, depending on Python version and then we test against that
@@ -258,7 +258,7 @@ Two times three is "six"
 
 There are many many more unusual and sometimes subtle differences between
 Python 2 and Python 3. Although the techniques mentioned here works for most
-of them, I definitely recommend you to look at Benjamin Petersons module 
+of them, I definitely recommend you to look at Benjamin Petersons module
 "six"\ [#six]_ It contains a ``PY3`` constant to use when checking for the version of
 Python, and it contains the above mentioned ``b()`` and ``u()`` functions,
 although the ``u()`` function doesn't specify an encoding, so you are restricted
@@ -273,7 +273,7 @@ support the reorganization of the urllib and urllib2 modules, so there you still
 need to use the ``try/except`` import technique.
 
 The six module even contains helpers for unusual problems, like using
-metaclasses and the attributes of functions, which also have been renamed. 
+metaclasses and the attributes of functions, which also have been renamed.
 Although it requires Python 2.4 or later you can use many of the techniques in
 it even under earlier versions of Python, if you need to support them.
 

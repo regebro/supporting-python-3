@@ -44,9 +44,9 @@ Python 3 as soon as you can. If the applications and modules you write are for
 your or your company's use only, then look into porting when it feels like you
 have the time. If your project is in a state of panic, moving to Python 3 is
 probably not the right thing to do.
- 
+
 If you are writing software that you sell or share as open source, then you want
-to move more quickly to enable your customers to move over to Python 3. 
+to move more quickly to enable your customers to move over to Python 3.
 
 If you are writing a package that other `developers` use, every day it doesn't
 support Python 3 is a day when you are blocking your users from porting, and a

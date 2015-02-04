@@ -5,7 +5,7 @@
 ...        if isinstance(n, slice):
 ...            # Expand the slice object using range()
 ...            # to a maximum of eight items.
-...            return [self[x] for x in 
+...            return [self[x] for x in
 ...                    range(*n.indices(8))]
 ...
 ...        # Return one item of the tart

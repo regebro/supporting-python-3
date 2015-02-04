@@ -24,8 +24,8 @@ constant is a good idea:
 
     >>> import sys
     >>> PY3 = sys.version > '3'
-    
-Then you can just use the PY3 constant in the rest of the software. 
+
+Then you can just use the PY3 constant in the rest of the software.
 
 Now, onto the most common problems.
 
@@ -38,7 +38,7 @@ Incorrect imports
 Sometimes you'll encounter a situation where ``2to3`` seems to have missed
 changing an import. This
 is usually because you can import a function or class from another module than where
-it's defined. 
+it's defined.
 
 For example, in Python 2 ``url2pathname`` is defined in ``urllib``, but it is
 used by and imported into ``urllib2``. It's common to see code that imports ``url2pathname``
@@ -81,7 +81,7 @@ Python 3's absolute/relative import syntax.
 
     from __future__ import absolute_import
     from . import mymodule
-    
+
 Since the module already uses the new import behavior the ``import`` fixer
 will not make any changes to the relative imports, avoiding these problems.
 
@@ -122,7 +122,7 @@ See :ref:`richcomparisons` for an example of how to do that.
 Sorting
 ---------------------------------------------------------------------------
 
-.. index:: sorting, TypeError: 'cmp' is an invalid keyword argument, 
+.. index:: sorting, TypeError: 'cmp' is an invalid keyword argument,
            TypeError: must use keyword argument for key function
 
 In parallel to the removal of the ``cmp()`` function and ``__cmp__()`` method
@@ -227,7 +227,7 @@ bytes. If you need to do it there is a trick that works under both Python 2 and
 Python 3 and that is to make a one character long slice.
 
 .. literalinclude:: _tests/test-3.10.txt
-    
+
 This will work equally well under Python 2.6 as Python 3, although you get a
 one character ``str``-string in Python 2.6 and a one character ``bytes``-string in Python 3.
 
@@ -357,7 +357,7 @@ different on different platforms. If it has any other encoding you need to pass
 that encoding into the ``open()`` function as a parameter. In Python 2 the
 ``open()`` function doesn't take an encoding parameter and will return a ``str``
 object. As long as your file contains only ASCII characters this isn't a
-problem, but when it does you will have to make some changes. 
+problem, but when it does you will have to make some changes.
 
 Opening the file as binary and decoding the data afterward is an option, for
 example with ``codecs.open()``. However, the translation of line endings that
@@ -440,7 +440,7 @@ return and expect data in byte-strings.
 The Python 3 ``csv``-module instead requires you to open the file in
 text-mode with ``newline=''``, and it returns and expects Unicode strings.
 
-If you need to support both Python 2 and Python 3, and you need to support 
+If you need to support both Python 2 and Python 3, and you need to support
 Unicode, the best solution I have found is to use "wrapper" classes. The
 following classes work for Python 2.6 and later.
 
@@ -488,8 +488,8 @@ workaround for that is easy and will work under Python 2 as well. Just assign a
 dummy variable to the result:
 
 .. literalinclude:: _tests/test-3.16.txt
-    
-    
+
+
 Types are now classes
 =====================
 
@@ -521,10 +521,10 @@ exceptions. The output of tracebacks now includes the module names of the
 exception. In Python 2 checking for an exception would look like this:
 
 .. literalinclude:: _tests/test-3.21.txt
-    
+
 However, in Python 3 that traceback will include the module name, so you have
 to make it look like this:
-    
+
 .. literalinclude:: _tests/test-3.22.txt
 
 In addition to this, some Exceptions have moved as a part of the general
@@ -559,7 +559,7 @@ String representation
 
 Output from functions that return binary data, like reading from a website,
 will return ``str`` under Python 2, while in Python 3 they will
-return ``bytes``, which has a different representation. 
+return ``bytes``, which has a different representation.
 
 To solve this I have used
 a helper function that makes sure the output is a string before printing it:

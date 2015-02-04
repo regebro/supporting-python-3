@@ -33,7 +33,7 @@ you include the ``-w`` flag it will not write the changes to the files. It
 writes the new file to the same file name as the original one and saves the old
 one with a ``.bak`` extension, so if you want to keep the original file name
 without changes you must first copy the files and then convert the copy.
-    
+
 If you have doctests in your Python files you also need to run ``2to3`` a second
 time with ``-d`` to convert the doctests and if you have text files that are
 doctests you need to run ``2to3`` on those explicitly. A complete conversion can
@@ -43,14 +43,14 @@ therefore look something like this::
     $ 2to3 -w -d .
     $ 2to3 -w -d src/mypackage/README.txt
     $ 2to3 -w -d src/mypackage/tests/*.txt
-    
+
 Under Linux and OS X the 2to3 script is installed in the same folder as the
 Python executable. Under Windows it in installed as ``2to3.py`` in the
 ``Tools\Scripts`` folder in your Python installation, and you have to give
 the full path::
 
     C:\projects\mypackage> C:\Python3.3\Tools\Scripts\2to3.py -w .
-    
+
 If you run ``2to3`` often you might want to add the Scripts directory to your
 system path.
 
@@ -69,10 +69,10 @@ specify the default set of fixers, called ``all``::
 The buffer fixer will replace all use of the ``buffer`` type with a
 ``memoryview`` type. The ``buffer`` type is gone in Python 3 and the
 ``memoryview`` type is not completely compatible. So the ``buffer`` fixer is not
-included by default as you might have to make manual changes as well. 
+included by default as you might have to make manual changes as well.
 
 The other three fixers will make more stylistic changes and are as such not
-really necessary. 
+really necessary.
 
 The ``idioms`` fixer will update some outdated idioms. It will change ``type(x)
 == SomeType`` and other type-tests to using ``isinstance()``, it will
@@ -121,7 +121,7 @@ uploaded to CheeseShop, many of the users will then get the wrong version and
 will be unable to install your package.
 
 One common solution for this is to have two separate package names, like ``mymodule``
-and ``mymodule3``, but then you have two packages to maintain and two releases to make. 
+and ``mymodule3``, but then you have two packages to maintain and two releases to make.
 A better solution is
 to include both source trees in one distribution archive, for example
 under ``src2`` for Python 2 and ``src3`` under Python 3. You can then in your
@@ -130,12 +130,12 @@ Python version::
 
       import sys
       from distutils.core import setup
-      
+
       if sys.version < '3':
             package_dir = {'': 'src2'}
       else:
             package_dir = {'': 'src3'}
-            
+
       setup(name='foo',
             version='1.0',
             package_dir = package_dir,
@@ -149,7 +149,7 @@ do that.
 
 If you have a very complex ``setup.py`` you might want to have one
 for each version of Python, one called ``setup2.py`` for Python 2 and one
-called ``setup3.py`` for Python 3. You can then make a ``setup.py`` that 
+called ``setup3.py`` for Python 3. You can then make a ``setup.py`` that
 selects the correct setup-file depending on Python version:
 
 .. literalinclude:: _tests/test-2.6/setup.py
@@ -214,14 +214,14 @@ http://python-distribute.org/distribute_setup.py. You then run
 installed. Distribute is mainly compatible with Setuptools, so you can use
 Setuptools under Python 2 instead of Distribute but it's probably better to be
 consistent and use Distribute under Python 2 as well.
-    
+
 If you are using Distutils or Setuptools to install your software you already
 have a ``setup.py``. To switch from Setuptools to Distribute you don't have
 to do anything. To switch from Distutils to Distribute you need to change where
 you import the ``setup()`` function from. In Distutils you import from
 ``distutils.core`` while in Setuptools and Distribute you import from
 ``setuptools``.
-    
+
 If you don't have a ``setup.py`` you will have to create one. A typical example of a
 ``setup.py`` would look something like this:
 
@@ -273,9 +273,9 @@ directory. Under Python 2, the ``use_2to3`` option will be ignored.
 
 Distribute will convert all Python files and also all doctests in Python
 files. However, if you have doctests located in separate text files, these
-will not automatically be converted. By adding them to the 
-``convert_2to3_doctests`` option Distribute will convert them as 
-well. 
+will not automatically be converted. By adding them to the
+``convert_2to3_doctests`` option Distribute will convert them as
+well.
 
 To use additional fixers, the parameter ``use_2to3_fixers`` can be set
 to a list of names of packages containing fixers. This can be used both for
@@ -290,7 +290,7 @@ needed if you use the Zope Component Architecture.
     converted. The conversion process will not know which files was
     converted during the last run, so it doesn't know that a file which during
     the last run was just copied now should be copied and converted. Therefore
-    you often have to delete the whole build directory 
+    you often have to delete the whole build directory
     after making changes to ``setup.py``.
 
 You should now be ready to try to run the tests under Python 3 by running

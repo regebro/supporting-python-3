@@ -66,7 +66,7 @@ Should now look like this::
     };
 
 This will work in Python 2.6 and 2.7 as well. If you need to support Python
-2.5 or earlier, you can simply define the ``PyVarObject_HEAD_INIT`` macro 
+2.5 or earlier, you can simply define the ``PyVarObject_HEAD_INIT`` macro
 if it's missing:
 
 .. code-block:: none
@@ -133,7 +133,7 @@ PY_MAJOR_VERSION >= 3``, both when you define the struct and when you use it.
     #if PY_MAJOR_VERSION >= 3
         m = PyModule_Create(&moduledef);
     #else
-        m = Py_InitModule3("themodulename", 
+        m = Py_InitModule3("themodulename",
             module_functions, "This is a module");
     #endif
 
@@ -153,7 +153,7 @@ functions like reload and traverse:
             ob = Py_InitModule3(name, methods, doc);
     #endif
 
-The definition of the module initialization function has also changed. 
+The definition of the module initialization function has also changed.
 In Python 2 you declared a function to initialize the module like this:
 
 .. code-block:: none
@@ -195,7 +195,7 @@ a macro:g
     #else
         #define MOD_INIT(name) PyMODINIT_FUNC init##name(void)
     #endif
-    
+
     MODINIT(themodulename)
     {
     ...
@@ -203,7 +203,7 @@ a macro:g
 
 But you still have to either have ``#if`` statements in the function to
 determine if you should return a value or not, or make yet another macro
-for that. 
+for that.
 
 Another option is to define three functions. Firstly the actual module
 initialization function, returning a ``PyObject*`` and then two wrappers. One
@@ -216,14 +216,14 @@ that calls the module initizaliation without returning a value:
     static PyObject *
     moduleinit(void)
     {
-        MOD_DEF(m, "themodulename", 
+        MOD_DEF(m, "themodulename",
                 "This is the module docstring",
         module_methods)
 
         if (m == NULL)
             return NULL;
-  
-        if (PyModule_AddObject(m, "hookable", 
+
+        if (PyModule_AddObject(m, "hookable",
 	       (PyObject *)&hookabletype) < 0)
             return NULL;
 
@@ -241,13 +241,13 @@ that calls the module initizaliation without returning a value:
             return moduleinit();
         }
     #endif
-    
+
 As you see the module initialization will in any case end up with a lot of ``#if
 PY_MAJOR_VERSION >= 3``. A complete example of all these ``#if`` statements is
 this, taken from ``zope.proxy``:
 
 .. code-block:: none
-    
+
     #if PY_MAJOR_VERSION >= 3
       static struct PyModuleDef moduledef = {
 	PyModuleDef_HEAD_INIT,
@@ -261,33 +261,33 @@ this, taken from ``zope.proxy``:
 	NULL,                /* m_free */
       };
     #endif
-    
+
     static PyObject *
     moduleinit(void)
     {
 	PyObject *m;
-	
+
     #if PY_MAJOR_VERSION >= 3
 	m = PyModule_Create(&moduledef);
     #else
-	m = Py_InitModule3("_zope_proxy_proxy", 
+	m = Py_InitModule3("_zope_proxy_proxy",
 			    module_functions, module___doc__);
     #endif
-    
+
 	if (m == NULL)
 	    return NULL;
-    
+
 	if (empty_tuple == NULL)
 	    empty_tuple = PyTuple_New(0);
-    
+
 	ProxyType.tp_free = _PyObject_GC_Del;
-    
+
 	if (PyType_Ready(&ProxyType) < 0)
 	    return NULL;
-    
+
 	Py_INCREF(&ProxyType);
 	PyModule_AddObject(m, "ProxyBase", (PyObject *)&ProxyType);
-    
+
 	if (api_object == NULL) {
 	    api_object = PyCObject_FromVoidPtr(&wrapper_capi, NULL);
 	    if (api_object == NULL)
@@ -295,10 +295,10 @@ this, taken from ``zope.proxy``:
 	}
 	Py_INCREF(api_object);
 	PyModule_AddObject(m, "_CAPI", api_object);
-	
+
       return m;
     }
-    
+
     #if PY_MAJOR_VERSION < 3
 	PyMODINIT_FUNC
 	init_zope_proxy_proxy(void)
@@ -335,28 +335,28 @@ one block of definitions in the beginning:
       #define MOD_DEF(ob, name, doc, methods) \
 	      ob = Py_InitModule3(name, methods, doc);
     #endif
-        
+
     MOD_INIT(_zope_proxy_proxy)
     {
 	PyObject *m;
-	
+
 	MOD_DEF(m, "_zope_proxy_proxy", module___doc__,
 	        module_functions)
-    
+
 	if (m == NULL)
 	    return MOD_ERROR_VAL;
-    
+
 	if (empty_tuple == NULL)
 	    empty_tuple = PyTuple_New(0);
-    
+
 	ProxyType.tp_free = _PyObject_GC_Del;
-    
+
 	if (PyType_Ready(&ProxyType) < 0)
 	    return MOD_ERROR_VAL;
-    
+
 	Py_INCREF(&ProxyType);
 	PyModule_AddObject(m, "ProxyBase", (PyObject *)&ProxyType);
-    
+
 	if (api_object == NULL) {
 	    api_object = PyCObject_FromVoidPtr(&wrapper_capi, NULL);
 	    if (api_object == NULL)
@@ -364,11 +364,11 @@ one block of definitions in the beginning:
 	}
 	Py_INCREF(api_object);
 	PyModule_AddObject(m, "_CAPI", api_object);
-	
+
         return MOD_SUCCESS_VAL(m);
-	
+
     }
-    
+
 This is by far my preferred version, for stylistic reasons, but ultimately it's
 a matter of taste and coding style if you prefer the in-line ``#if`` statements
 or if you like to use many ``#define`` macros. So you choose what fits best with
@@ -397,7 +397,7 @@ keep Python 2 compatibility you have to replace it conditionally:
         PyModule_AddObject(m, "val", PyLong_FromLong(2));
     #else
         PyModule_AddObject(m, "val", PyInt_FromLong(2));
-    #endif	
+    #endif
 
 Also in this case a ``#define`` makes for cleaner code if you need to do it
 more than once:
@@ -456,5 +456,5 @@ depending on what you need.
 
 .. rubric:: Footnotes
 
-.. [#pep3123] `http://www.python.org/dev/peps/pep-3123/ 
+.. [#pep3123] `http://www.python.org/dev/peps/pep-3123/
 	      <http://www.python.org/dev/peps/pep-3123/>`_

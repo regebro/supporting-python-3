@@ -120,4 +120,3 @@ suite.addTests(unittest.makeSuite(ConstantFixerTest))
 runner = unittest.TextTestRunner()
 results = runner.run(suite)
 sys.exit(1 if results.failures else 0)
-

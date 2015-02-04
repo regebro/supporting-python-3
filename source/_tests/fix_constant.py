@@ -3,7 +3,7 @@ from lib2to3.fixer_util import Call, Name, is_probably_builtin
 from lib2to3.patcomp import PatternCompiler
 
 class FixConstant(BaseFix):
-        
+
     PATTERN = """
         import_name< 'import' modulename='foo' >
         |
@@ -23,12 +23,12 @@ class FixConstant(BaseFix):
         super(FixConstant, self).start_tree(tree, filename)
         # Reset the patterns attribute for every file:
         self.usage_patterns = []
-        
+
     def match(self, node):
         # Match the import patterns:
         results = {"node": node}
         match = self.pattern.match(node, results)
-        
+
         if match and 'constantname' in results:
             # This is an "from import as"
             constantname = results['constantname'].value
@@ -38,7 +38,7 @@ class FixConstant(BaseFix):
                 PatternCompiler().compile_pattern(
                     "constant='%s'"%constantname))
             return results
-        
+
         if match and 'importname' in results:
             # This is a "from import" without "as".
             # Add a pattern to fix the usage of the constant
@@ -47,7 +47,7 @@ class FixConstant(BaseFix):
                 PatternCompiler().compile_pattern(
                     "constant='CONSTANT'"))
             return results
-        
+
         if match and 'modulename' in results:
             # This is a "import as"
             modulename = results['modulename'].value
@@ -57,19 +57,19 @@ class FixConstant(BaseFix):
                 "power< '%s' trailer< '.' " \
                 "attribute='CONSTANT' > >" % modulename))
             return results
-        
+
         # Now do the usage patterns
         for pattern in self.usage_patterns:
             if pattern.match(node, results):
                 return results
-    
+
     def transform(self, node, results):
         if 'importname' in results:
             # Change the import from CONSTANT to get_constant:
             node = results['importname']
             node.value = 'get_constant'
             node.changed()
-            
+
         if 'constant' in results or 'attribute' in results:
             if 'attribute' in results:
                 # Here it's used as an attribute.
@@ -82,7 +82,7 @@ class FixConstant(BaseFix):
                 # assignment etc:
                 if not is_probably_builtin(node):
                     return None
-                
+
             # Now we replace the earlier constant name with the
             # new function call. If it was renamed on import
             # from 'CONSTANT' we keep the renaming else we

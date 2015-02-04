@@ -10,7 +10,7 @@ class Klas(object):
       of docstrings and other strings
       are touched.
    '''
-    
+
    # Do some code in the class construction:
    for x in range(10):
       print x
@@ -38,7 +38,7 @@ class Klas(object):
       of docstrings and other strings
       are touched.
    '''
-    
+
    # Do some code in the class construction:
     for x in range(10):
         print x
@@ -61,10 +61,10 @@ class Klas(object):
 """
 
 class IndentFixerTest(FixerTest):
-    
+
     def setUp(self):
         self.refactor = RefactoringTool(['fix_indent']).refactor_string
-            
+
     def test_indent(self):
         self._test(indent_source, indent_target)
 
@@ -82,27 +82,27 @@ def afunction(alist):
 """
 
 class Name1FixerTest(FixerTest):
-    
+
     def setUp(self):
         self.refactor = RefactoringTool(['fix_name1']).refactor_string
-            
+
     def test_name(self):
         self._test(name_source, name_target)
 
-                
+
 class Name2FixerTest(FixerTest):
-    
+
     def setUp(self):
         self.refactor = RefactoringTool(['fix_name2']).refactor_string
-            
+
     def test_name(self):
         self._test(name_source, name_target)
-        
+
 class Name3FixerTest(FixerTest):
-    
+
     def setUp(self):
         self.refactor = RefactoringTool(['fix_name3']).refactor_string
-            
+
     def test_name(self):
         self._test(name_source, name_target)
 
@@ -110,7 +110,7 @@ constant1_source = """import foo as bar
 
 def afunction(alist):
     return [x*CONSTANT for x in alist]
-    
+
 def bfunction(blist):
     return [x*bar.CONSTANT for x in blist]
 """
@@ -120,7 +120,7 @@ constant1_target = """import foo as bar
 
 def afunction(alist):
     return [x*CONSTANT for x in alist]
-    
+
 def bfunction(blist):
     return [x*bar.get_constant() for x in blist]
 """
@@ -129,7 +129,7 @@ constant2_source = """from foo import CONSTANT as renamed
 
 def afunction(alist):
     return [x*renamed for x in alist]
-    
+
 def bfunction(blist):
     return [x*bar.renamed for x in blist]
 """
@@ -139,7 +139,7 @@ constant2_target = """from foo import get_constant as renamed
 
 def afunction(alist):
     return [x*renamed() for x in alist]
-    
+
 def bfunction(blist):
     return [x*bar.renamed for x in blist]
 """
@@ -148,7 +148,7 @@ constant3_source = """from foo import CONSTANT
 
 def afunction(alist):
     return [x*CONSTANT for x in alist]
-    
+
 def bfunction(blist):
     return [x*bar.CONSTANT for x in blist]
 """
@@ -157,7 +157,7 @@ constant3_target = """from foo import get_constant
 
 def afunction(alist):
     return [x*get_constant() for x in alist]
-    
+
 def bfunction(blist):
     return [x*bar.CONSTANT for x in blist]
 """
@@ -166,10 +166,10 @@ constant1_source = """import foo
 
 def afunction(alist):
     return [x*CONSTANT for x in alist]
-    
+
 def bfunction(blist):
     return [x*foo.CONSTANT for x in blist]
-    
+
 def cfunction(clist):
     return [x*bar.CONSTANT for x in clist]
 """
@@ -179,19 +179,19 @@ constant1_target = """import foo
 
 def afunction(alist):
     return [x*CONSTANT for x in alist]
-    
+
 def bfunction(blist):
     return [x*foo.get_constant() for x in blist]
-    
+
 def cfunction(clist):
     return [x*bar.CONSTANT for x in clist]
 """
 
 class ConstantFixerTest(FixerTest):
-    
+
     def setUp(self):
         self.refactor = RefactoringTool(['fix_constant']).refactor_string
-            
+
     def test_constant(self):
         self._test(constant1_source, constant1_target)
         self._test(constant2_source, constant2_target)

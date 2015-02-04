@@ -2,7 +2,7 @@
 import unittest
 
 class FixerTest(unittest.TestCase):
-    
+
     def _test(self, source, target):
         refactored = str(self.refactor(source, 'zope.fixer.test'))
         if refactored != target:

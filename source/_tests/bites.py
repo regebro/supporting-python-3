@@ -6,10 +6,10 @@ if sys.version < '3':
                 # It's a list of integers
                 value = ''.join([chr(x) for x in value])
             return super(Bites, cls).__new__(cls, value)
-            
+
         def itemint(self, index):
             return ord(self[index])
-        
+
         def iterint(self):
             for x in self:
                 yield ord(x)
@@ -24,8 +24,7 @@ else:
 
         def itemint(self, x):
             return self[x]
-        
+
         def iterint(self):
             for x in self:
                 yield x
-

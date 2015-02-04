@@ -9,7 +9,7 @@ class ComparableMixin(object):
 
     def __lt__(self, other):
         return self._compare(other, lambda s, o: s < o)
-        
+
     def __le__(self, other):
         return self._compare(other, lambda s, o: s <= o)
 

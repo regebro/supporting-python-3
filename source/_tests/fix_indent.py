@@ -3,10 +3,10 @@ from lib2to3.fixer_util import Leaf
 from lib2to3.pgen2 import token
 
 class FixIndent(BaseFix):
-    
+
     indents = []
     line = 0
-    
+
     def match(self, node):
         if isinstance(node, Leaf):
             return True
@@ -43,7 +43,7 @@ class FixIndent(BaseFix):
                     # line of the prefix and add the correct
                     # indententation as a new last line.
                     prefix_lines = node.prefix.split('\n')[:-1]
-                    prefix_lines.append(' ' * 4 * 
+                    prefix_lines.append(' ' * 4 *
                                         len(self.indents))
                     new_prefix = '\n'.join(prefix_lines)
                     if node.prefix != new_prefix:
@@ -64,13 +64,13 @@ class FixIndent(BaseFix):
                     # the old indentation and add the correct
                     # indententation as a new last line.
                     prefix_lines = node.prefix.split('\n')[:-1]
-                    prefix_lines.append(' ' * 4 * 
+                    prefix_lines.append(' ' * 4 *
                                         len(self.indents))
                     new_prefix = '\n'.join(prefix_lines)
                     if node.prefix != new_prefix:
                         node.prefix = new_prefix
                         # Return the modified node:
-                        return node                    
+                        return node
 
         # Nothing was modified: Return None
         return None

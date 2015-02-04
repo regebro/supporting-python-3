@@ -121,7 +121,7 @@ Dictionary methods
 
 In Python 2 dictionaries have the methods ``iterkeys()``, ``itervalues()`` and
 ``iteritems()`` that return iterators instead of lists. In Python 3 the standard
-``keys()``, ``values()`` and ``items()`` return dictionary views, which are 
+``keys()``, ``values()`` and ``items()`` return dictionary views, which are
 iterators, so the iterator variants become pointless and are removed.
 
 If you need to support both Python 2 and Python 3 without ``2to3``
@@ -146,7 +146,7 @@ See also :ref:`iterator-section`
 In Python 2 the syntax to catch exceptions have changed from::
 
     except (Exception1, Exception2), target:
-    
+
 to the clearer Python 3 syntax::
 
     except (Exception1, Exception2) as target:
@@ -173,7 +173,7 @@ In Python 2 the exception object is iterable and indexable:
 .. literalinclude:: _tests/exceptions25.txt
 
 In Python 3 you must use the ``args`` attribute, which will work under
-Python 2 as well. 
+Python 2 as well.
 
 .. literalinclude:: _tests/exceptions26.txt
 
@@ -194,7 +194,7 @@ In Python 2 ``exec`` is a statement:
 .. literalinclude:: _tests/exec25.txt
 
 In Python 3 ``exec`` is a function:
-    
+
 .. literalinclude:: _tests/exec30.txt
 
 The Python 3 syntax without the global and local dictionaries will work in
@@ -247,7 +247,7 @@ instead of ``file``.
 
 .. rubric:: 2to3 fixer ☑ six support ☐
 
-In Python 2 ``filter()`` returns a list while in Python 3 it returns an iterator. 
+In Python 2 ``filter()`` returns a list while in Python 3 it returns an iterator.
 ``2to3`` will in some cases place a ``list()`` call around the call to ``filter()``
 to ensure that the result is still a list. If you need code that runs
 in both Python 2 and Python 3 without ``2to3`` conversion and you need the result to
@@ -275,7 +275,7 @@ also a syntax to import from one level up module above; ``from .. import csv``.
 If you to support both Python 2 and Python 3 without ``2to3`` the ``from .``
 and ``from ..`` syntax has been available since Python 2.5, together with a
 ``from __future__ import absolute_import`` statement that changes the behavior
-to the Python 3 behavior. 
+to the Python 3 behavior.
 
 If you need to support Python 2.4 or earlier you have to spell out the whole
 package name so ``import csv`` becomes ``from mypkg import csv`` and ``from csv
@@ -294,7 +294,7 @@ Indentation
 .. rubric:: 2to3 fixer ☐ six support ☐
 
 In Python 2 a tab will be equal to eight spaces as indentation, so you can
-indent one line with a tab, and the next line with eight spaces. This is 
+indent one line with a tab, and the next line with eight spaces. This is
 confusing if you are using an editor that expands tabs to another number than
 eight spaces.
 
@@ -323,13 +323,13 @@ If you need to evaluate the input string you can use ``eval()``::
 
     >>> eval(input('Type in an expression: '))
     'Type in an expression: ' 1+2
-    3    
+    3
 
 If you need code that runs in both Python 2 and Python 3 without ``2to3``
 conversion you can conditionally set ``input()`` to be ``raw_input()``:
 
 .. literalinclude:: _tests/input26.txt
-    
+
 ---------------------------------------------------------------------------
 Integer division
 ---------------------------------------------------------------------------
@@ -388,7 +388,7 @@ Python version and test against that. ``six`` includes this:
 
 .. rubric:: 2to3 fixer ☐ six support ☐
 
-In Python 2 ``map()`` returns a list while in Python 3 it returns an iterator. 
+In Python 2 ``map()`` returns a list while in Python 3 it returns an iterator.
 ``2to3`` will in some cases place a ``list()`` call around the call to
 ``map()`` to ensure that the result is still a list. If you need code that
 runs in both Python 2 and Python 3 without ``2to3`` conversion and you need
@@ -409,7 +409,7 @@ The Python 2 ``map()`` will accept ``None`` as it's function argument, where
 it will just return the object(s) passed in. As this transforms ``map()``
 into ``zip()`` it's not particularily useful, and in Python 3 this no longer
 works. However, some code dependes on this behavior, and you can use the
-following function as a full replacement for the Python 2 map. 
+following function as a full replacement for the Python 2 map.
 
 .. literalinclude:: _tests/map2.py
 
@@ -483,7 +483,7 @@ are various techniques for this. This is discussed in detail in
 In Python 2 the syntax for the ``raise`` statement is::
 
     raise E, V, T
-    
+
 Where ``E`` is a string, an exception class or an exception instance, ``V`` the
 an optional exception value in the case that ``E`` is a class or a string and
 ``T`` is a ``traceback`` object if you want to supply a traceback from a
@@ -495,7 +495,7 @@ As with the Python 2 syntax, ``value`` and ``traceback`` are optional.
 The syntax without the traceback variable is::
 
     raise E(V)
-    
+
 This works in all versions of Python. It's very unusual that you need the
 traceback parameter, but if you do and you also need to write code that runs
 under Python 2 and Python 3 without using ``2to3`` you need to create different
@@ -604,7 +604,7 @@ Sorting
 In Python 2 the ``.sort()`` method on lists as well as the ``sorted()`` builtin
 takes two parameters, ``cmp`` and ``key``. In Python 3 only the ``key``
 parameter is supported. There are no fixers for this, so you need to change
-that in the Python 2 code. 
+that in the Python 2 code.
 
 See :ref:`keycmp-section` for more information.
 

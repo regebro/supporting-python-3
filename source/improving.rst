@@ -31,7 +31,7 @@ after the loop. Code like this is used because up to Python 2.3 this was the
 only built-in way of sorting.
 
 .. literalinclude:: _tests/test-4.1.txt
-   
+
 Python 2.4 has a new built-in, ``sorted()``, that will return a sorted list and
 takes the same parameters as ``.sort()``. With ``sorted()`` you often can avoid
 the temporary variable. It also will accept any iterable as input, not just
@@ -40,7 +40,7 @@ lists, which can make your code more flexible and readable.
 .. literalinclude:: _tests/test-4.12.txt
 
 There is however no benefit in replacing a ``mylist.sort()`` with
-``mylist = sorted(mylist)``, in fact it will use more memory. 
+``mylist = sorted(mylist)``, in fact it will use more memory.
 
 The ``2to3`` fixer ``"idioms"`` will change some usage of ``.sort()`` into
 ``sorted()``.
@@ -63,7 +63,7 @@ manager is created and entered in the ``with`` statement and available during
 the ``with`` statements code block. At the end of the code block the context
 manager is exited. This may not sound very exiting until you realize that you
 can use it for resource allocation. The resource manager then allocates the
-resource when you enter the context and deallocates it when you exit. 
+resource when you enter the context and deallocates it when you exit.
 
 The most common example of this type of resource allocation are open files. In
 most low level languages you have to remember to close files that you open,
@@ -218,7 +218,7 @@ Becomes:
 
 Thereby saving you from creating a list with 2 million items and then
 immediately throwing it away. You can use a generator expression anywhere
-you can have any expression, but quite often you need to put parentheses 
+you can have any expression, but quite often you need to put parentheses
 around it:
 
 .. literalinclude:: _tests/test-7.3.txt
@@ -248,7 +248,7 @@ The next ``next()``
 .. index:: next()
 
 In Python 2 iterators have a ``.next()`` method you use to get the next value
-from the iterator. 
+from the iterator.
 
 .. literalinclude:: _tests/test-7.10.txt
 
@@ -271,7 +271,7 @@ There is several new modules that you should also take a look at to see if they
 can be of use for you. I won't take them up in detail here, since most of them
 are hard to benefit from without refactoring your software completely, but
 you should know they exist. For more information on them, you can look at the
-Python documentation. 
+Python documentation.
 
 Abstract base classes
 =====================
@@ -285,7 +285,7 @@ methods or properties can not be instantiated.
 
 The abstract base classes can also be used to define interfaces by creating
 classes that have no concrete methods. The class would then work only as
-an interface, and subclassing from it guarantees that it implements the 
+an interface, and subclassing from it guarantees that it implements the
 interface. The new hierarchy of mathematical classes introduced
 in Python 2.6 and Python 3.0 is a good example of this.
 
@@ -302,7 +302,7 @@ do to concurrent processing, letting you have process queues and use locks
 and semaphores for synchronizing the processes.
 
 ``multiprocessing`` is included in Python 2.6 and later.
-It is also available for Python 2.4 and Python 2.5 on the 
+It is also available for Python 2.4 and Python 2.5 on the
 CheeseShop\ [#multiprocessing]_.
 
 If you do concurrency you may also want to take a look at the ``futures``
@@ -328,12 +328,11 @@ numeric types.
 
 .. rubric:: Footnotes
 
-.. [#asf] `http://docs.python.org/library/string.html#format-string-syntax 
+.. [#asf] `http://docs.python.org/library/string.html#format-string-syntax
            <http://docs.python.org/library/string.html#format-string-syntax>`_
 
-.. [#multiprocessing] `http://pypi.python.org/pypi/multiprocessing 
+.. [#multiprocessing] `http://pypi.python.org/pypi/multiprocessing
                       <http://pypi.python.org/pypi/multiprocessing>`_
 
-.. [#futures] `http://pypi.python.org/pypi/futures/ 
+.. [#futures] `http://pypi.python.org/pypi/futures/
               <http://pypi.python.org/pypi/futures/>`_
-

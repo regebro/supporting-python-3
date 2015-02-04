@@ -3,6 +3,6 @@
 'arg2'
 >>> for a in e.args:
 ...   print a
-... 
+...
 arg1
 arg2

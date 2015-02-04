@@ -127,13 +127,13 @@ and Python 3.
 Python 2.6 and 2.7 has a lot of forward compatibility, making supporting
 Python 2.6 and Python 3 much easier than supporting Python 2.5 and Python 3.
 Supporting 2.5 or even older versions means you
-have to employ more tricks. Python 3.3 also re-introduces the ``u''`` 
+have to employ more tricks. Python 3.3 also re-introduces the ``u''``
 literal for strings, which helps with one of the major porting difficulties.
 
 .. index:: six
 
 Benjamin Petersons excellent ``six`` module\ [#six]_ also helps by wrapping
-much of the incompatibilities, and since the need to support older Python 
+much of the incompatibilities, and since the need to support older Python
 versions is shrinking, supporting both Python 2 and Python 3 without conversion
 is becoming the preferred method.
 
@@ -208,7 +208,7 @@ their need.
 
 If the package is stable from a functional standpoint, it might be perfectly
 reasonable to have separate branches in your version control system and make
-bugfixes on both branches separately, but 
+bugfixes on both branches separately, but
 if your package is under active development you probably want to support both
 Python 2 and Python 3 at the same time from the same code base. If you want to
 use the official ``2to3`` conversion method, or if you want to try to get the
@@ -249,11 +249,11 @@ If your framework is extended by writing Python packages that uses Distutils,
 Setuptools or Distribute as a packaging system this means the users of your
 framework are already in a good position, as they can use Distutils or
 Distribute for the ``2to3`` conversion to support both new and old versions
-of the framework. 
+of the framework.
 
 If extensions are packaged and distributed in some other way
 than with Distutils you may want to consider making your own set of support
-scripts to make the transition easier, or stopping support for older Python 
+scripts to make the transition easier, or stopping support for older Python
 versions, so that your third-party package developers doesn't have to use
 ``2to3``.
 

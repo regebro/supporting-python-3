@@ -17,7 +17,6 @@ Ran 1 test in 0.000s
 OK
 <BLANKLINE>
 
-
 >>> if os.path.exists('build'):
 ...     shutil.rmtree('build')
 >>> os.chdir(curdir)
