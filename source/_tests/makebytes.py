@@ -1,5 +1,5 @@
 import sys
-if sys.version < '3':
+if sys.version_info < (3,):
     def b(x):
         return x
 else:

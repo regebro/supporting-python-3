@@ -131,7 +131,7 @@ Python version::
       import sys
       from distutils.core import setup
 
-      if sys.version < '3':
+      if sys.version_info < (3,):
             package_dir = {'': 'src2'}
       else:
             package_dir = {'': 'src3'}

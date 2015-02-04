@@ -1,5 +1,5 @@
 >>> import sys
->>> if sys.version > '3':
+>>> if sys.version_info > (3,):
 ...     long = int
 >>> long(1)
 1L

@@ -1,5 +1,5 @@
 >>> import sys
->>> if sys.version > '3':
+>>> if sys.version_info > (3,):
 ...     from map2 import map
 >>> def fun(a, b):
 ...    if b is not None:

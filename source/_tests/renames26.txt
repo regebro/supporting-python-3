@@ -1,5 +1,5 @@
 >>> import sys
->>> if sys.version < '3':
+>>> if sys.version_info < (3,):
 ...     defaults_attr = 'func_defaults'
 ...     get_method_class = lambda x: x.im_class
 ... else:

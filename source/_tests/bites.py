@@ -1,5 +1,5 @@
 import sys
-if sys.version < '3':
+if sys.version_info < (3,):
     class Bites(str):
         def __new__(cls, value):
             if isinstance(value[0], int):

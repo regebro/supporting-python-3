@@ -1,6 +1,6 @@
 import sys, csv, codecs
 
-PY3 = sys.version > '3'
+PY3 = sys.version_info > (3,)
 
 class UnicodeReader:
     def __init__(self, filename, dialect=csv.excel,

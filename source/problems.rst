@@ -13,17 +13,16 @@ you may run into. Some are easy to fix, other less so.
 
 If you need to support both Python 2 and Python 3 it's quite likely that you
 will need to make conditional code depending on the Python version. In this book
-I consistently use my favourite way of testing, I compare the ``sys.version``
-string with ``'3'``. But there are many other
-ways of doing the same test, like ``sys.version[0] != '3'`` or using the
-version_info tuple with ``sys.version_info < ('3',)`` etc. Which one you use is
-a matter of personal preference. If you end up doing a lot of tests, setting a
-constant is a good idea:
+I consistently compare the ``sys.version_info`` tuple with a ``(3,)`` tuple. But
+there are many other ways of doing the same test, like ``sys.version_info[0] !=
+3`` or using the ``sys.version`` string. Which one you use is a matter of
+personal preference. If you end up doing a lot of tests, setting a constant is a
+good idea:
 
 .. code-block:: none
 
     >>> import sys
-    >>> PY3 = sys.version > '3'
+    >>> PY3 = sys.version_info > (3,)
 
 Then you can just use the PY3 constant in the rest of the software.
 

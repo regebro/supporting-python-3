@@ -1,6 +1,6 @@
 >>> import sys
 >>> data = open('maybe_a.gif', 'rb').read()
->>> if sys.version > '3':
+>>> if sys.version_info > (3,):
 ...     data = data.decode('latin-1')
 >>> data[:6]
 'GIF89a'
