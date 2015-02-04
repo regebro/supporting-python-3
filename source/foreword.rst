@@ -20,9 +20,9 @@ would be like and how much better it would be. It got to the point where Andrew
 Kuchling created PEP 3100 (which was the original PEP 3000, which I eventually
 took responsibility for) to keep track of the various ideas we had for py3k in
 late 2004 as it was obvious around that time that we were actually going to go
-through with the "crazy" idea of making Python 3000 happen. This all led serious
-development starting in March 2006 and culminating in the release of Python 3.0
-on December 3, 2008.
+through with the "crazy" idea of making Python 3000 happen. This all led to 
+serious development starting in March 2006 and culminating in the release of
+Python 3.0 on December 3, 2008.
 
 While all of this was happening, there was mixed feelings from the community
 about the feasibility/sanity of creating Python 3. When PEP 3100 was created in
