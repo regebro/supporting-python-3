@@ -108,7 +108,7 @@ Further resources
 
 There is still very little documentation on how to port to Python 3. There is a
 short how-to in the Python 3.2 documentation at
-http://docs.python.org/dev/howto/pyporting.html. There is also page on the
+http://docs.python.org/dev/howto/pyporting.html. There is also a page on the
 official Python wiki for porting notes at
 http://wiki.python.org/moin/PortingPythonToPy3k but it is still fairly
 empty.
