@@ -76,7 +76,7 @@ compared to the more uniform feel of Python 3. And secondly, more code will be
 written in Python 3 than in Python 2 over the history of the Python language, so
 not porting means your project will eventually be left behind (this is already
 starting to happen for projects which have publicly said they will not switch,
-leading people to find alternatives for both their Python 2 and Python 3 code in
+leading people to find alternatives for both their Python 2 and Python 3 code, to
 make sure they can switch to Python 3 when ready). Sitting idly by as the world
 changes around you is not a good thing to do if you want to stay relevant.
 
