@@ -19,11 +19,11 @@ Before you start
 
 .. index:: RO, READONLY, static/statichere/staticforward
 
-There are some things you can do before you start the actual porting. The first
-one is to remove any usage of some old aliases you don't need any more. For example the
-``RO`` macro has been removed. It was only a shorthand for ``READONLY``, so
-if you used ``RO`` in your code you can replace it with ``READONLY``
-instead.
+There are some things you can do before you start the actual work of addnig
+Python 3 support. The first one is to remove any usage of some old aliases you
+don't need any more. For example the ``RO`` macro has been removed. It was only
+a shorthand for ``READONLY``, so if you used ``RO`` in your code you can replace
+it with ``READONLY`` instead.
 
 Other common redefinitions are ``statichere`` and ``staticforward``. They are
 workarounds for compatibility with certain compilers. For well behaving
@@ -32,7 +32,7 @@ gone since there are now have well behaving compilers on all platforms that
 CPython supports. If you use them in your code, you can replace them
 with ``static``.
 
-Another change you can do before porting is to move away from ``PyClassObject``.
+Another change you can do as preparation is to move away from ``PyClassObject``.
 That's the long deprecated "old-style classes" which are removed in Python 3.
 You should be able to move over to ``PyTypeObject`` with no big problem.
 
@@ -42,7 +42,7 @@ Object initialization
 
 .. index:: missing braces error, PyObject_HEAD_INIT, PyVarObject_HEAD_INIT, Py_TYPE, ob_type
 
-One of the less obvious errors encountered when porting C extensions to Python 3
+One of the less obvious errors encountered when compiling C extensions under Python 3
 is the error ``"missing braces around initializer"``, which you will get when you
 initialize a Python class. You can indeed get around that by placing a couple of
 braces in the correct places, but a better solution is to replace the

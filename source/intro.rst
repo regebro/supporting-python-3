@@ -25,7 +25,7 @@ Most surprising was how little the fundamentals have changed. Writing code with
 Python 3 still feels just like the old comfortable shoes, but newly shined and
 with new laces. The hardest change to get used to is to remember that ``print``
 is a function. The relatively small differences doesn't necessarily mean that
-porting to Python 3 is easy, but it can be and hopefully this book will make it
+supporting Python 3 is easy, but it can be and hopefully this book will make it
 even easier.
 
 ---------------------------------------------------------------------------
@@ -33,15 +33,15 @@ Is it time yet?
 ---------------------------------------------------------------------------
 
 Yes, Python 3 is a nicer language to work with. But Python 2 is also very good
-and the major reason for not porting yet is that Python 2 is so good that most
+and the major reason for not switching yet is that Python 2 is so good that most
 developers feel little incentive to switch. Although it has been officially
 declared that Python 2.7 will be the last version of Python 2, it will receive
 bug-fixes for many years to come, so there is no hurry to change to Python 3 for
 that reason.
 
-So when should you port? In general, I would recommend everyone to move to
+So when should you switch? In general, I would recommend everyone to move to
 Python 3 as soon as you can. If the applications and modules you write are for
-your or your company's use only, then look into porting when it feels like you
+your or your company's use only, then look into moving when it feels like you
 have the time. If your project is in a state of panic, moving to Python 3 is
 probably not the right thing to do.
 
@@ -49,41 +49,42 @@ If you are writing software that you sell or share as open source, then you want
 to move more quickly to enable your customers to move over to Python 3.
 
 If you are writing a package that other `developers` use, every day it doesn't
-support Python 3 is a day when you are blocking your users from porting, and a
-day when Python 3 users have to look for another package than yours. In this
-case you should really try to port immediately, and if you have dependencies
-that are not ported, then help port them first.
+support Python 3 is a day when you are blocking your users from using Python 3,
+and a day when Python 3 users have to look for another package than yours. In
+this case you should really try to add Python 3 support immediately, and if you
+have dependencies that does not support Python 3, then help with those first.
 
 ---------------------------------------------------------------------------
-What if I can't port right now?
+What if I can't switch right now?
 ---------------------------------------------------------------------------
 
 .. index:: trove classifier
 
-In any case all the packages `you` depend on need to be ported before you can
-port. Most packages that have been ported to Python 3 are listed on the
-CheeseShop under the "Python 3 packages" heading\ [#pypi3]_. That list is a list
-of all packages that includes ``"Programming Language :: Python :: 3"`` as a
-trove classifier in the package meta data. If your dependencies have not been
-ported it is a good idea to contact the maintainers of your dependencies to see
-what plans they have for porting. Perhaps they do already support Python 3, but
-didn't update their meta data? Maybe they just didn't know anyone was waiting
-for a Python 3 port? Maybe you can help porting?
+In any case all the packages `you` depend on need support Python 3 before you
+can switch. Most packages that support Python 3 are listed on the CheeseShop
+under the "Python 3 packages" heading\ [#pypi3]_. That list is a list of all
+packages that includes ``"Programming Language :: Python :: 3"`` as a trove
+classifier in the package meta data. If your dependencies do not support Python
+3 it is a good idea to contact the maintainers of your dependencies to see what
+plans they have for Python 3 support. Perhaps they do already support Python 3,
+but didn't update their meta data? Maybe they just didn't know anyone was
+waiting for Python 3 support? Maybe you can help?
 
-It's always a good idea to publish information on your plans for porting on your
+It's always a good idea to publish information on your plans for Python 3 on your
 software's homepage or in the description of the package on the CheeseShop.
-Include a list of your dependencies that aren't ported. That way your users can
+Include a list of your dependencies that are blocking you. That way your users can
 see if there is something they can help with. Open source all is about
 programmers helping each other; both using and contributing to each other's
-software. A porting effort is no different.
+software. Supporting Python 3 is no different.
 
-And even if you aren't porting right now, there are things you can do already.
-Chapter 3, :ref:`preparing-chapter` lists things you should change before
-porting, and Chapter 6 :ref:`improving-chapter` lists modern idioms in Python
-that you already can use, depending on what Python versions you need to support.
-To ease porting, many of the new functions and modules in Python 3 have been
-backported to Python 2.6 or Python 2.7, and the only thing that stops you from
-using this already is if you need to support older versions.
+And even if you aren't switching right now, there are things you can do already.
+Chapter 3, :ref:`preparing-chapter` lists things you should change before adding
+Python 3 support, and Chapter 6 :ref:`improving-chapter` lists modern idioms in
+Python that you already can use, depending on what Python versions you need to
+support. To ease the transition to Python 3, many of the new functions and
+modules in Python 3 have been backported to Python 2.6 or Python 2.7, and the
+only thing that stops you from using this already is if you need to support
+Python 2.5 or earlier.
 
 ---------------------------------------------------------------------------
 Python and its versions
@@ -106,12 +107,11 @@ Python 3, you can read that as Python 3.1 and later.
 Further resources
 ---------------------------------------------------------------------------
 
-There is still very little documentation on how to port to Python 3. There is a
+There is still very little documentation on how to support Python 3. There is a
 short how-to in the Python 3.2 documentation at
 http://docs.python.org/dev/howto/pyporting.html. There is also a page on the
-official Python wiki for porting notes at
-http://wiki.python.org/moin/PortingPythonToPy3k but it is still fairly
-empty.
+official Python wiki at http://wiki.python.org/moin/PortingPythonToPy3k which
+contain a good list of other resources.
 
 If you need help, or if you want to help out, there is the
 ``python-porting@python.org`` mailing list. You can subscribe to it from

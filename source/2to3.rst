@@ -1,5 +1,5 @@
 ===========================================================================
-Porting with 2to3
+2to3
 ===========================================================================
 
 .. index:: 2to3
@@ -205,8 +205,8 @@ means that any files you have updated will be copied to a build directory and
 converted with ``2to3`` before the tests are run in that build directory, all by
 just one command. After you have made a change to your code, you just run
 ``python setup.py test`` for each version of Python you need to support to make
-sure that the tests run. This makes for a comfortable environment to do
-Python 3 porting while continuing to support Python 2.
+sure that the tests run. This makes for a comfortable environment to add
+Python 3 support while continuing to support Python 2.
 
 To install Distribute you need to run the Distribute setup script from
 http://python-distribute.org/distribute_setup.py. You then run
@@ -296,7 +296,7 @@ needed if you use the Zope Component Architecture.
 You should now be ready to try to run the tests under Python 3 by running
 ``python3 setup.py test``. Most likely some of the tests will fail, but as long
 as the ``2to3`` process works and the tests run, even if they fail, then you
-have come a long way towards porting to Python 3. It's now time to look into
+have come a long way towards supporting Python 3. It's now time to look into
 fixing those failing tests. Which leads us into discussing the common migration
 problems.
 

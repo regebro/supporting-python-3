@@ -4,20 +4,20 @@
 Preparing for Python 3
 ===========================================================================
 
-Before you start the actual porting there are several things you should do to
-prepare your code to make the transition to Python 3 as smooth as possible, by
-changing things that are hard for ``2to3`` to port correctly. These are things
-you can do right now even if you don't plan to move to Python 3 yet and in some
-cases they will even speed up your code under Python 2.
+Before you start adding Python 3 support there are several things you should do
+to prepare your code to make the transition to Python 3 as smooth as possible,
+by changing things that are hard for ``2to3`` to fix. These are things you can
+do right now even if you don't plan to move to Python 3 yet and in some cases
+they will even speed up your code under Python 2.
 
 You might also want to read the chapter on :ref:`improving-chapter`, which
-contains many other improvements you can do to your code even before porting.
+contains many other improvements you can apply to your code.
 
 ---------------------------------------------------------------------------
 Run under Python 2.7.
 ---------------------------------------------------------------------------
 
-The first step in the porting process is to get your code running in Python 2.6
+The first step in the process is to get your code running in Python 2.6
 or 2.7. It isn't very important which version you use here, but obviously the
 last Python 2 version makes the most sense, so if you can use Python 2.7,
 do so.
@@ -78,7 +78,7 @@ division to always return integers. But the automatic conversion with ``2to3``
 will not know what types the operands are and therefore it doesn't know if the
 division operator divides integers or not. Therefore it can not do any
 conversion here. This means that if you are using the old integer division, your
-code may fail after porting to Python 3.
+code may fail under Python 3.
 
 Since this change has been planned already since Python 2.2, it and all later
 versions include a new operator, called `floor division`, written with two
@@ -120,14 +120,14 @@ In Python 2 there are two types of classes, "old-style" and "new". The
 subclass from ``object``, even if they don't do so explicitly.
 
 There are many differences between new and old classes, but few of them will
-cause you any problems when porting. If you use multiple inheritance you
-are probably going to encounter problems because if the different method
+cause you any problems with Python 3. If you use multiple inheritance you
+are probably going to encounter problems because of the different method
 resolution orders.\ [#mro]_
 
-If you use multiple inheritance you should therefore switch to using
-new-style classes before porting. This is done by making sure all objects
-subclass from ``object``, and you will probably have to change the order
-you list the super-classes in the class definitions.
+If you use multiple inheritance you should therefore switch to using new-style
+classes before adding Python 3 support. This is done by making sure all objects
+subclass from ``object``, and you will probably have to change the order you
+list the super-classes in the class definitions.
 
 .. _richcomparisons:
 
@@ -277,8 +277,8 @@ Having both the rich comparison methods and the ``__cmp__()`` method violates
 the principle that there should be only one obvious way to do it, so in
 Python 3 the support for ``__cmp__()`` has been removed. For Python 3 you
 therefore must implement all of the rich comparison operators if you want your
-objects to be comparable. You don't have to do this before porting but doing so
-makes the porting experience a bit smoother.
+objects to be comparable. You don't have to do this before supporting Python 3
+but doing so makes the experience a bit smoother.
 
 Comparatively tricky
 ====================
@@ -383,8 +383,8 @@ Testing ``coverage`` and ``tox``
 
 .. index:: testing, tox
 
-Having a good set of tests is always valuable for any project. When it comes to
-porting to Python 3, having tests is going to speed up the process a lot,
+Having a good set of tests is always valuable for any project. When you add
+Python 3 support, having tests is going to speed up the process a lot,
 because you will need to run the tests over and over and testing an application
 by hand takes a lot of time.
 
@@ -394,12 +394,12 @@ modules is Ned Batchelder's ``coverage`` module.\ [#coverage]_ Many test runner
 frameworks like zope.testing, nose and py.test include support for the
 ``coverage`` module, so you may have it installed already.
 
-If you are porting a module that supports many versions of Python, running the
+If you are developing a module that supports many versions of Python, running the
 tests for all these versions quickly becomes a chore. To solve this Holger Krekel
 has created a tool called ``tox``\ [#tox]_ that will install a virtualenv for
 each version you want to support, and will run your tests with all these versions
 with one simple command. It seems like a small thing, and it is, but it makes
-porting just a little bit more pleasant. If you plan to support both Python 2
+the experience just a little bit more pleasant. If you plan to support both Python 2
 and Python 3 you should try it out.
 
 ---------------------------------------------------------------------------

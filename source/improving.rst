@@ -4,18 +4,18 @@
 Improving your code with modern idioms
 ===========================================================================
 
-Once you have ported to Python 3 you have a chance to use the newer features of
+Once you have added Python 3 support you have a chance to use the newer features of
 Python to improve your code. Many of the things mentioned in this chapter are in
-fact possible to do even before porting, as they are supported even by quite old
-versions of Python. But I mention them here anyway, because they aren't always
-used when the code could benefit from them. This includes generators, available
-since Python 2.2; the ``sorted()`` method, available since Python 2.4 and
-context managers, available since Python 2.5.
+fact possible to do even before adding Python 3 support, as they are supported
+even by quite old versions of Python. But I mention them here anyway, because
+they aren't always used when the code could benefit from them. This includes
+generators, available since Python 2.2; the ``sorted()`` method, available
+since Python 2.4 and context managers, available since Python 2.5.
 
 The rest of the new features mentioned here have in fact been backported to
 either Python 2.6 or Python 2.7. So if you are able to drop support for
-Python 2.5 and earlier, you can use almost all of these new features already
-before porting.
+Python 2.5 and earlier, you can use almost all of these new features even if you
+are not adding Python 3 support.
 
 .. _sorting-section:
 

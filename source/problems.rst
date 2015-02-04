@@ -464,12 +464,12 @@ have doctests you will get many, many failures. Don't despair! Most of them are
 not actual failures, but changes in the output formatting. ``2to3`` handles that
 change in the code of the doctests, but not in the output.
 
-If you are only porting to Python 3, the solution is simple and boring. Run the
+If you need to only support Python 3, the solution is simple and boring. Run the
 doctests and look at each failure to see if it is a real failure or a change in
 formatting. This can sometimes be frustrating, as you can sit and stare at a
 failure trying to figure out what actually is different between the expected and
 the actual output. On the other hand, that's normal with doctests, even when you
-aren't porting to Python 3, which of course is one of the reasons that they
+aren't using Python 3, which of course is one of the reasons that they
 aren't suitable as the main form of testing for a project.
 
 It gets more tricky if you need to continue to support Python 2, since you need
