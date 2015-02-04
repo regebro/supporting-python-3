@@ -52,7 +52,7 @@ If you are writing a package that other `developers` use, every day it doesn't
 support Python 3 is a day when you are blocking your users from porting, and a
 day when Python 3 users have to look for another package than yours. In this
 case you should really try to port immediately, and if you have dependencies
-that is not ported, then help port them first.
+that are not ported, then help port them first.
 
 ---------------------------------------------------------------------------
 What if I can't port right now?
