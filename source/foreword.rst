@@ -24,7 +24,7 @@ through with the "crazy" idea of making Python 3000 happen. This all led to
 serious development starting in March 2006 and culminating in the release of
 Python 3.0 on December 3, 2008.
 
-While all of this was happening, there was mixed feelings from the community
+While all of this was happening, there were mixed feelings from the community
 about the feasibility/sanity of creating Python 3. When PEP 3100 was created in
 2004, Python's popularity took a very noticeable uptick. This trend continued
 and around 2006, when py3k development started in earnest, Python's popularity
