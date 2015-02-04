@@ -1,5 +1,5 @@
 >>> import sys
->>> if sys.version < '2.4':
+>>> if sys.version_info < (2, 4):
 ...    def sorted(data, key):
 ...        mapping = {}
 ...        for x in data:
