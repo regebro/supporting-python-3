@@ -69,7 +69,7 @@ While some might question the utility in moving Python 2 code to Python 3,
 there are two things to keep in mind. One is that Python 3 is simply a nicer
 language than Python 2. While there are only a handful of major changes, it's
 all of the little changes that add up to make the experience of programming
-Python 3 that much more pleasant compared to Python 2. It's rather common to
+Python 3 that much more pleasant than Python 2. It's rather common to
 hear core developers say how they prefer coding in Python 3 over Python 2. I for
 one have simply stopped coding in Python 2 as it just feels slightly off
 compared to the more uniform feel of Python 3. And secondly, more code will be
