@@ -3,7 +3,7 @@ CHANGES
 
 
 1.0 (Unreleased)
-================
+----------------
 
 Changes from Porting to Python 3:
 
