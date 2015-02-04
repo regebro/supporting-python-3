@@ -81,7 +81,7 @@ And even if you aren't porting right now, there are things you can do already.
 Chapter 3, :ref:`preparing-chapter` lists things you should change before
 porting, and Chapter 6 :ref:`improving-chapter` lists modern idioms in Python
 that you already can use, depending on what Python versions you need to support.
-To ease porting, many of the new functions and modules in Python 3 has been
+To ease porting, many of the new functions and modules in Python 3 have been
 backported to Python 2.6 or Python 2.7, and the only thing that stops you from
 using this already is if you need to support older versions.
 
