@@ -20,11 +20,11 @@ would be like and how much better it would be. It got to the point where Andrew
 Kuchling created PEP 3100 (which was the original PEP 3000, which I eventually
 took responsibility for) to keep track of the various ideas we had for py3k in
 late 2004 as it was obvious around that time that we were actually going to go
-through with the "crazy" idea of making Python 3000 happen. This all led serious
+through with the "crazy" idea of making Python 3000 happen. This all led to serious
 development starting in March 2006 and culminating in the release of Python 3.0
 on December 3, 2008.
 
-While all of this was happening, there was mixed feelings from the community
+While all of this was happening, there were mixed feelings from the community
 about the feasibility/sanity of creating Python 3. When PEP 3100 was created in
 2004, Python's popularity took a very noticeable uptick. This trend continued
 and around 2006, when py3k development started in earnest, Python's popularity
@@ -49,7 +49,7 @@ We also realized that we didn't want to leave our existing community behind and
 develop Python 3 only for new code. The development team knew as we created
 Python 3 that it was a superior language and so we wanted to share it with
 everyone by making sure they could bring their Python 2 code with them into
-their Python 3 work. From the beginning we made sure that changes we made could
+their Python 3 work. From the beginning we made sure that the changes we made could
 either be warned against in the worst case, and automated in the best.
 Techniques we learned and tools we developed were used to port Python's
 extensive standard library so as to learn from our own mistakes and make sure
@@ -65,18 +65,18 @@ that the timeline Guido set out is turning out to be true as major libraries
 have already been ported, allowing their dependents to make the switch
 themselves.
 
-While some might question the utility in moving to Python 2 code to Python 3,
+While some might question the utility in moving Python 2 code to Python 3,
 there are two things to keep in mind. One is that Python 3 is simply a nicer
 language than Python 2. While there are only a handful of major changes, it's
 all of the little changes that add up to make the experience of programming
-Python 3 that much more pleasant compared to Python 2. It's rather common to
+Python 3 that much more pleasant than Python 2. It's rather common to
 hear core developers say how they prefer coding in Python 3 over Python 2. I for
 one have simply stopped coding in Python 2 as it just feels slightly off
 compared to the more uniform feel of Python 3. And secondly, more code will be
 written in Python 3 than in Python 2 over the history of the Python language, so
 not porting means your project will eventually be left behind (this is already
 starting to happen for projects which have publicly said they will not switch,
-leading people to find alternatives for both their Python 2 and Python 3 code in
+leading people to find alternatives for both their Python 2 and Python 3 code, to
 make sure they can switch to Python 3 when ready). Sitting idly by as the world
 changes around you is not a good thing to do if you want to stay relevant.
 

@@ -68,9 +68,8 @@ Contrariwise, if you import a module from the standard library and you also
 have a folder with the same name as that library, the ``import`` fixer will
 assume that it is a local package, and change the import to a local import.
 It will do this even if the folder is not a package. This is a bug in the
-``import`` fixer, but all current versions of Python has this bug, so you
+``import`` fixer, but all current versions of Python have this bug, so you
 need to be aware of it.
-
 
 The solution to these problems for Python 2.5 and later is to convert the
 imports to relative imports and add the ``__future__`` import to enable
@@ -84,7 +83,7 @@ Python 3's absolute/relative import syntax.
 Since the module already uses the new import behavior the ``import`` fixer
 will not make any changes to the relative imports, avoiding these problems.
 
-If you need to support Python 2.4 or earlier you can avoid these issue by not
+If you need to support Python 2.4 or earlier you can avoid these issues by not
 having any relative imports at all, and excluding the ``import`` fixer when
 running ``2to3``.
 
@@ -140,7 +139,7 @@ Sorting Unicode
 
 .. index:: sorting, Unicode
 
-Because the ``cmp=`` parameter is removed in Python 3 sorting Unicode with
+Because the ``cmp=`` parameter is removed in Python 3, sorting Unicode with
 ``locale.strcoll`` no longer works. In Python 3 you can use
 ``locale.strxfrm`` instead.
 
@@ -175,7 +174,7 @@ string of characters, it's a string of integers. ``Bytearrays`` are more like a
 list, but a list that can only hold integers between 0 and 255. A ``bytearray``
 is mutable and used if you need to manipulate binary data. Because it's a new
 type, although it also exists in Python 2.6, I'm mostly going to ignore it in
-this book and concentrate on other ways  of handling binary data.
+this book and concentrate on other ways of handling binary data.
 
 Byte literals
 =============

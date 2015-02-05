@@ -51,7 +51,7 @@ removed from the standard library. For example the support for Classic Mac OS
 has been removed in Python 3, only OS X is supported now and for that reasons
 the modules that support specific things about Classic Mac OS have been removed.
 
-You will get warnings for many of the changes listed below, but not all, as well
+You will get warnings for many of the changes listed below (but not all), as well
 as for some of the library reorganization. The library reorganization changes
 are simple and need no explanation, the warnings will tell you the new name of
 the module.
@@ -115,7 +115,7 @@ Use new-style classes
 
 .. index:: classes, object
 
-In Python 2 there is two types of classes, "old-style" and "new". The
+In Python 2 there are two types of classes, "old-style" and "new". The
 "old-style" classes have been removed in Python 3, so all classes now
 subclass from ``object``, even if they don't do so explicitly.
 
@@ -151,7 +151,7 @@ separated as much as possible.
 
 In Python 2 the ``'t'`` and ``'b'`` file mode flags changes how newlines are
 treated on some platforms, for example Windows. But the flag makes no difference
-on Unix, so many programs that are developed for Unix tends to ignore that flag
+on Unix, so many programs that are developed for Unix tend to ignore that flag
 and open binary files in text mode. However, in Python 3 the flags also
 determine if you get ``bytes`` or ``unicode`` objects as results when you read
 from the file. So make sure you really use the text and binary flags when you
@@ -202,7 +202,7 @@ There is one case where using ``key`` is less obvious than using ``cmp`` and
 that's when you need to sort on several values. Let's say we want the result to
 be sorted with the longest names first and names of the same length should be
 sorted alphabetically. Doing this with a ``key`` function is not immediately
-obvious, but the solution is usually to sort twice, with the least importing
+obvious, but the solution is usually to sort twice, with the least important
 sorting first.
 
 .. literalinclude:: _tests/test-4.6.txt
@@ -300,7 +300,7 @@ returns ``NotImplemented`` then Python will try to ask the other objects
     calling ``other.__lt__(self)`` and if it returns ``NotImplemented`` then
     Python will try ``self.__gt__(other)`` again and you get infinite recursion!
 
-So implementing a good set of rich comparison operators that behave properly in
+Implementing a good set of rich comparison operators that behave properly in
 all cases is not difficult once you understand all the cases, but getting to
 grips with that is not entirely trivial. You can do it in many different ways,
 my preferred way is this mixin, which works equally well in Python 2 and
@@ -310,8 +310,8 @@ Python 3.
 
 The previously mentioned ``functools.total_ordering()`` class
 decorator from Python 3.2 is a nice solution as well, and it can be copied and
-used other Python versions as well. But since it uses class decorators it will
-not work in version below Python 2.6.
+used in other Python versions as well. But since it uses class decorators it will
+not work in versions below Python 2.6.
 
 To use the mixin above you need to implement a ``_cmpkey()`` method that
 returns a key of objects that can be compared, similar to the ``key()``
@@ -323,10 +323,10 @@ The above mixin will return ``NotImplemented`` if the object compared with
 does not implement a ``_cmpkey()`` method, or if that method returns
 something that isn't comparable with the value that ``self._cmpkey()``
 returns. This means that every object that has a ``_cmpkey()`` that returns
-a tuple will be comparable with all other objects that also has a ``_cmpkey()``
+a tuple will be comparable with all other objects that also have a ``_cmpkey()``
 that returns a tuple and most importantly, if it isn't comparable, the
 operators will fall back to asking the other object if it knows how to
-compare the two objects. This way you have an object who has the maximum
+compare the two objects. This way you have an object which has the maximum
 chance of meaningful comparisons.
 
 Implementing ``__hash__()``
@@ -340,7 +340,7 @@ it as a key in dictionaries for example, and that's good, only immutable
 objects should be dictionary keys.
 
 In Python 3, ``__hash__`` will be set to ``None`` automatically if you define
-``__eq__()``, and the object will become unhasheable, so for Python 3 you
+``__eq__()``, and the object will become unhashable, so for Python 3 you
 don't need to override ``__hash__()`` unless it is an immutable object and
 you want to be able to use it as a key value.
 
@@ -354,7 +354,7 @@ operators mentioned above, then implementing ``__hash__()`` is very easy:
 
 .. literalinclude:: _tests/test-3.31.txt
 
-The attributes of this class is marked as internal by the convention of using
+The attributes of this class are marked as internal by the convention of using
 a leading underscore, but they are not strictly speaking immutable. If you
 want a truly immutable class in Python the easiest way is subclassing
 ``collections.namedtuple``, but that is out of scope for this book.

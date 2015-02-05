@@ -86,7 +86,7 @@ Using Distribute to support the 2to3 conversion
 Distribute\ [#distribute]_ is a fork of Phillip J. Eby's popular Setuptools
 package and provides Python 3 compatibility, as well as extensions simplifying
 the support of Python 2 and Python 3 from the same source. Basically what
-Distribute has done is to extend the principles of Distutils ``build_py_2to3``
+Distribute has done is to extend the principles of the Distutils ``build_py_2to3``
 command and integrated ``2to3`` into all parts of the packaging story.
 
 These changes will be merged back into Setuptools during 2013, but at the time
@@ -124,7 +124,7 @@ under both Python 2 and Python 3 without needing any conversion, although you
 have to apply several tricks to avoid the incompatibilities between Python 2
 and Python 3.
 
-Python 2.6 and 2.7 has a lot of forward compatibility, making supporting
+Python 2.6 and 2.7 have a lot of forward compatibility, making supporting
 Python 2.6 and Python 3 much easier than supporting Python 2.5 and Python 3.
 Supporting 2.5 or even older versions means you
 have to employ more tricks. Python 3.3 also re-introduces the ``u''``
@@ -139,7 +139,7 @@ is becoming the preferred method.
 
 There are also cases where you can't use Distribute, or don't want to. You may
 need to distribute your code in a format that is not installable with Distutils
-and therefore not Distribute. In those cases you can't use Distributes ``2to3``
+and therefore not Distribute. In those cases you can't use Distribute's ``2to3``
 support and then using ``2to3`` is more work and not using ``2to3`` becomes a
 more attractive prospect.
 
@@ -179,7 +179,7 @@ that does the conversion from Python 3 to Python 2. This enables you to write
 your code for Python 3 and then convert it to Python 2 before release.
 
 However, there is no Distribute support for ``3to2`` and also Python 2.5 or
-earlier also do not include the required ``lib2to3`` package. Therefore ``3to2``
+earlier do not include the required ``lib2to3`` package. Therefore ``3to2``
 currently remains only an interesting experiment, although this may change in
 the future.
 
@@ -192,7 +192,7 @@ Applications
 
 Unless your code is a reusable package or framework you probably do not need to
 support older versions of Python, unless some of your customers are stuck on
-Python 2 while others demand that you support Python 3. In most cases of you
+Python 2 while others demand that you support Python 3. In most cases you
 can just drop Python 2 support completely.
 
 
@@ -232,7 +232,7 @@ Python 3.3 or later.
 
 If you are already releasing your package using Distutils or its descendants
 Setuptools and Distribute, then using Distribute's ``2to3`` support is easy,
-and that might be the path of least resistence. You can also start that way
+and that might be the path of least resistance. You can also start that way
 and change the code bit by bit to something that doesn't need converting.
 
 
@@ -242,7 +242,7 @@ Frameworks
 The benefit of using frameworks when developing doesn't only come from the
 framework itself, but also from the plugins and extensions available to it. It
 is therefore important to make it easy for all developers using and extending
-the framework to switch to Python 3, as you otherwise risk to be stuck on
+the framework to switch to Python 3, as you otherwise risk being stuck on
 Python 2 forever.
 
 If your framework is extended by writing Python packages that uses Distutils,
@@ -254,7 +254,7 @@ of the framework.
 If extensions are packaged and distributed in some other way
 than with Distutils you may want to consider making your own set of support
 scripts to make the transition easier, or stopping support for older Python
-versions, so that your third-party package developers doesn't have to use
+versions, so that your third-party package developers don't have to use
 ``2to3``.
 
 

@@ -52,7 +52,7 @@ If you are writing a package that other `developers` use, every day it doesn't
 support Python 3 is a day when you are blocking your users from porting, and a
 day when Python 3 users have to look for another package than yours. In this
 case you should really try to port immediately, and if you have dependencies
-that is not ported, then help port them first.
+that are not ported, then help port them first.
 
 ---------------------------------------------------------------------------
 What if I can't port right now?
@@ -74,14 +74,14 @@ It's always a good idea to publish information on your plans for porting on your
 software's homepage or in the description of the package on the CheeseShop.
 Include a list of your dependencies that aren't ported. That way your users can
 see if there is something they can help with. Open source all is about
-programmers helping each other; both using and contributing to each others
+programmers helping each other; both using and contributing to each other's
 software. A porting effort is no different.
 
 And even if you aren't porting right now, there are things you can do already.
 Chapter 3, :ref:`preparing-chapter` lists things you should change before
 porting, and Chapter 6 :ref:`improving-chapter` lists modern idioms in Python
 that you already can use, depending on what Python versions you need to support.
-To ease porting, many of the new functions and modules in Python 3 has been
+To ease porting, many of the new functions and modules in Python 3 have been
 backported to Python 2.6 or Python 2.7, and the only thing that stops you from
 using this already is if you need to support older versions.
 
@@ -89,7 +89,7 @@ using this already is if you need to support older versions.
 Python and its versions
 ---------------------------------------------------------------------------
 
-Since I started writing this book, Python 2.7 and Python 3.2 has been
+Since I started writing this book, Python 2.7 and Python 3.2 have been
 released. For the purposes of this book, Python 2.6 and Python 2.7 can be seen
 as equal. So most of the times the book says Python 2.6, you can read that as
 Python 2.6 or Python 2.7.
@@ -108,7 +108,7 @@ Further resources
 
 There is still very little documentation on how to port to Python 3. There is a
 short how-to in the Python 3.2 documentation at
-http://docs.python.org/dev/howto/pyporting.html. There is also page on the
+http://docs.python.org/dev/howto/pyporting.html. There is also a page on the
 official Python wiki for porting notes at
 http://wiki.python.org/moin/PortingPythonToPy3k but it is still fairly
 empty.
