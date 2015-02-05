@@ -2,3 +2,7 @@
 *.egg-info
 .eggs
 eggs.csv
+*.bak
+*.2to3
+build
+python??
