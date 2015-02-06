@@ -127,9 +127,6 @@ go overboard you lose the benefit of the more readable syntax:
 For a full specification of the advanced string formatting syntax see
 the ``Common String Operations`` section of the Python documentation\ [#asf]_.
 
-The old string formatting based on % is planned to be eventually removed, but
-there is no decided timeline for this.
-
 ---------------------------------------------------------------------------
 Class decorators
 ---------------------------------------------------------------------------
