@@ -407,7 +407,7 @@ you want the Python 2 behaviour in Python 3 you can use a combination of
 
 The Python 2 ``map()`` will accept ``None`` as it's function argument, where
 it will just return the object(s) passed in. As this transforms ``map()``
-into ``zip()`` it's not particularily useful, and in Python 3 this no longer
+into ``zip()`` it's not particularly useful, and in Python 3 this no longer
 works. However, some code dependes on this behavior, and you can use the
 following function as a full replacement for the Python 2 map.
 
