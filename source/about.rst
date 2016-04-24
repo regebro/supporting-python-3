@@ -32,8 +32,8 @@ crowd funding campaign to make this book a community effort.
 
 **Brett Cannon** for writing the foreword.
 
-**Martin von Löwis** for indispensable feedback with his technical
-review of the book, as well as helping a lot on early porting work, like
+**Martin von Löwis** for indispensable feedback with his technical review of
+the book, as well as helping a lot on early efforts to support Python 3, like
 Distribute and zope.interface.
 
 **Godefroid Chapelle**, **Jasper Spaans** and **Wyn Williams** for reviewing the
@@ -42,6 +42,22 @@ book for content, grammar and errors.
 **Brandon Craig Rhodes** for editing the first chapters of this book when the
 idea was that it would be a series of articles in Python Magazine.
 
+---------------------------------------------------------------------------
+A note on terminology
+---------------------------------------------------------------------------
+
+The process of switching to Python 3 is most often called "porting". The first
+two editions of this book was also called "Porting to Python 3". However,
+this gave the false impression that this was a lot of work, and that Python 3
+was "a different language" than Python 2. Although moving to Python 3 can be
+hard work, for the most time it is not, and as Python 2.5 and Python 3.2 are
+rapidly falling out of use, it gets even easier.
+
+For that reason, I changed the name of the book to "Supporting Python 3" as this
+better reflects the effort. It's not porting, the vast majority of your code
+will work with no changes, or changes that can be done automatically with 2to3.
+
+I have tried to avoid using the word "porting" in the text as a part of this.
 
 .. rubric:: Footnotes
 

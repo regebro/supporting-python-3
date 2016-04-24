@@ -3,9 +3,9 @@ Supporting Python 3: An in-depth guide
 ======================================
 
 **Supporting Python 3** doesn't have to be daunting. This book guides you
-through the process of porting your Python 2 code to Python 3, from choosing a
-porting strategy to solving your distribution issues. Using plenty of code
-examples is takes you cross the hurdles and shows you the new Python features.
+through the process of adding Python 3 support, from choosing a
+strategy to solving your distribution issues. Using plenty of code
+examples, it guides you across the hurdles and shows you the new Python features.
 
 Crowd funding successful!
 -------------------------
@@ -65,6 +65,6 @@ About the Author
 ----------------
 
 **Lennart Regebro**, has been a full time Python developer since 2001 and has
-been porting to Python 3 since early 2008.
+been using Python 3 since early 2008.
 
 If you have any questions mail regebro@gmail.com .

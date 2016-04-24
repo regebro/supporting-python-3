@@ -195,8 +195,8 @@ Python 3 without ``2to3`` is handling binary data, just as it is when using
 making Unicode an issue as well. When using ``2to3`` to support Python 2 and
 Python 3, ``2to3`` will convert any Unicode literals to straight string
 literals. Without ``2to3`` we have no such luxury and since the Unicode literal
-``u''`` is gone in Python 3 we need to find a portable way to say that we want
-a Unicode string.
+``u''`` is gone in Python 3 we need to find a way to say that we want
+a Unicode string that works in all versions of Python.
 
 Here, only supporting Python 3.3 will make things much easier for you, because
 in Python 3.3, the ``u''`` literal is back! In that case you can mostly
@@ -222,8 +222,8 @@ While it will return a string object in Python 3:
 Here I use the ``unicode_escape`` encoding, because other encodings could fail
 if you save the file with a different encoding than the one specified in the
 function. Using ``unicode_escape`` is a bit more work that just typing in the
-characters and saving the file but it will be portable both between different
-versions of Python and different platforms.
+characters and saving the file but it will be work on different
+versions of Python as well as different operating system platforms.
 
 The ``unicode_escape`` encoding will convert all the various ways of entering
 unicode characters. The ``'\x00'`` syntax, the ``'\u0000'`` and even the

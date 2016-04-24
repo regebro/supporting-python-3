@@ -7,8 +7,8 @@ Extending 2to3 with your own fixers
 The ``2to3`` command is a wrapper around a standard library package, called
 ``lib2to3``. It contains a code parser, a framework for setting up fixers that
 modify the parse tree and a large set of fixers. The fixers that are included in
-``lib2to3`` are enough to do all of the conversion you need for any normal
-porting. There are cases, however, where things are slightly beyond normal and
+``lib2to3`` will do most conversion that can be done automatically.
+There are cases, however, where
 you may have to write your own fixers. I first want to reassure you that these
 cases are very rare and you are unlikely to ever need this chapter and that you
 can skip it without feeling bad.
@@ -17,12 +17,12 @@ can skip it without feeling bad.
 When fixers are necessary
 ---------------------------------------------------------------------------
 
-It is strongly recommended that you don't change the API when you port your
-module or package to Python 3, but sometimes you have to. For example, the Zope
-Component Architecture, a collection of packages to help you componentize your
-system, had to change it's API. With the ZCA\ [#zca]_ you define interfaces that
-define the behavior of components and then make components that implement these
-interfaces. A simple example looks like this:
+It is strongly recommended that you don't change the API when you add Python 3
+support to your module or package, but sometimes you have to. For example, the
+Zope Component Architecture, a collection of packages to help you componentize
+your system, had to change it's API. With the ZCA\ [#zca]_ you define interfaces
+that define the behavior of components and then make components that implement
+these interfaces. A simple example looks like this:
 
 .. literalinclude:: _tests/test-6.1.txt
 
@@ -56,8 +56,9 @@ The Parse Tree
 
 The ``2to3`` package contains support for parsing code into a parse tree. This
 may seem superfluous, as Python already has two modules for that, namely
-``parser`` and ``ast``, but the ``parser`` module uses Python's internal code
-parser, which is optimized to generate byte code and too low level for porting,
+``parser`` and ``ast``. However, the ``parser`` module uses Python's internal code
+parser, which is optimized to generate byte code and too low level for the
+code refactoring that is needed in this case,
 while the ``ast`` module is designed to generate an abstract syntax tree and
 ignores all comments and formatting.
 
@@ -115,9 +116,9 @@ parameter can be useful for more complex behavior. You can for example let the
 ``match()`` method return a list of sub-nodes to be transformed.
 
 By default all nodes will be sent to ``match()``. To speed up the fixer the
-refactoring methods will look at a fixer attribute called ``_accept_type``, 
+refactoring methods will look at a fixer attribute called ``_accept_type``,
 and only check the node for matching if it is of the same type. ``_accept_type``
-defaults to ``None``, meaning that it accepts all types. The types you can 
+defaults to ``None``, meaning that it accepts all types. The types you can
 accept are listed in ``lib2to3.pgen2.token``.
 
 A fixer should have an ``order`` attribute that should be set to ``"pre"`` or
@@ -234,10 +235,10 @@ which would be a syntax error. We need to treat the import and the usage
 separately. We'll use ``find_pattern.py`` to look for patterns to use.
 
 The user interface of ``find_pattern.py`` is not the most verbose, but it is
-easy enough to use once you know it. If we run:: 
+easy enough to use once you know it. If we run::
 
     $ find_pattern.py -f example.py
-    
+
 it will parse that file and print out the various nodes it finds. You press
 enter for each code snipped you don't want and you press ``y`` for the code
 snippet you do want. It will then print out a pattern that matches that code
@@ -275,7 +276,7 @@ helper classes ``Call`` and ``Name``. When you replace a node you need to make
 sure to preserve the prefix, or both white-space and comments may disappear::
 
     node.replace(Call(Name(node.value), prefix=node.prefix))
-    
+
 This example is still too simple. The patterns above will only fix the import
 when it is imported with ``from foo import CONSTANT``. You can also ``import
 foo`` and you can rename either ``foo`` or ``CONSTANT`` with an ``import as``.
