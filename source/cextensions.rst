@@ -404,7 +404,7 @@ more than once:
 
 .. code-block:: none
 
-    #if PY_MAJOR_VERSION < 3
+    #if PY_MAJOR_VERSION >= 3
         #define PyInt_FromLong PyLong_FromLong
     #endif
 
