@@ -1,2 +1,3 @@
-script: runtests.sh
+language: python
+script: ./runtests.sh
 
