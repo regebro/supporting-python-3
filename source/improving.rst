@@ -262,7 +262,7 @@ unless you are supporting Python 2.5 or earlier you can switch.
 New modules
 ---------------------------------------------------------------------------
 
-.. modules::
+.. index:: modules
 
 There is several new modules that you should also take a look at to see if they
 can be of use for you. I won't take them up in detail here, since most of them

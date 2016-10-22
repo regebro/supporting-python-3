@@ -204,7 +204,7 @@ ignore this section.
 
 But if you need to support Python 3.1 or 3.2,
 the best way to do this is to make a Unicode string maker function just like the
-``b()`` function in :ref:`Common migration problems` but for Unicode strings
+``b()`` function in :ref:`problems-chapter` but for Unicode strings
 instead of binary ``bytes``. The natural name for this function is of course
 ``u()``. We would then use ``b()`` instead of the ``b''`` literal, and ``u()``
 instead of the ``u''`` literal.

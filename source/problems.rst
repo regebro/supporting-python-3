@@ -575,7 +575,7 @@ reasons. This means that any doctest you have that tests the output of a
 dictionary or set will fail when you try to run it in Python 3.3, as the
 order will change with every run.
 
-.. code-block:: None
+.. code-block:: none
 
     Failed example:
         {x for x in department}
@@ -587,7 +587,7 @@ order will change with every run.
 This must be changed to equality testing, which unfortunately will make the
 failures much less informative.
 
-.. code-block:: None
+.. code-block:: none
 
     Failed example:
         {x for x in department} == \

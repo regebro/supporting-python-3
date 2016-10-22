@@ -29,24 +29,19 @@ supporting Python 3 is easy, but it can be and hopefully this book will make it
 even easier.
 
 ---------------------------------------------------------------------------
-Is it time yet?
+The time is nigh
 ---------------------------------------------------------------------------
 
-Yes, Python 3 is a nicer language to work with. But Python 2 is also very good
-and the major reason for not switching yet is that Python 2 is so good that most
-developers feel little incentive to switch. Although it has been officially
-declared that Python 2.7 will be the last version of Python 2, it will receive
-bug-fixes for many years to come, so there is no hurry to change to Python 3 for
-that reason.
+Python 2 is still more widely used than Python 3. A major reason for not
+switching yet is that Python 2 is so good that most developers feel little
+incentive to switch. Although it has been officially declared that
+Python 2.7 will be the last version of Python 2, it will receive bug-fixes
+until 2020, so there are still a few years left.
 
-So when should you switch? In general, I would recommend everyone to move to
-Python 3 as soon as you can. If the applications and modules you write are for
-your or your company's use only, then look into moving when it feels like you
-have the time. If your project is in a state of panic, moving to Python 3 is
-probably not the right thing to do.
-
-If you are writing software that you sell or share as open source, then you want
-to move more quickly to enable your customers to move over to Python 3.
+Despite this you should move to Python 3 as soon as as possible. Python 3 is
+a nicer cleaner language, and all the new cool features end up there. Those
+features are out of scope for this book, but I can just mention features like
+keyword-only arguments, chained exceptions, ``yield from``, and enums.
 
 If you are writing a package that other `developers` use, every day it doesn't
 support Python 3 is a day when you are blocking your users from using Python 3,

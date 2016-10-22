@@ -206,57 +206,10 @@ come, so you want to give them access to new functionality, but if you don't
 support Python 3, the users of Python 3 must find another package to fulfill
 their need.
 
-If the package is stable from a functional standpoint, it might be perfectly
-reasonable to have separate branches in your version control system and make
-bugfixes on both branches separately, but
-if your package is under active development you probably want to support both
-Python 2 and Python 3 at the same time from the same code base. If you want to
-use the official ``2to3`` conversion method, or if you want to try to get the
-code running under both Python 2 and Python 3 without a conversion step
-depends on what your code does and what versions of Python you need to support.
-
-There are cases where you won't be able
-to run the same code under Python 2 and Python 3 without a lot of effort
-because it relies so much on Python internals that the code becomes too
-different. There are also cases where the code is so straightforward that
-running ``2to3`` on it hardly changes it.
-Most code is somewhere in between and the decision is not always easy. A good
-idea is to run ``2to3`` on your code and look at the differences. If ``2to3``
-makes a lot of changes in your code, then you may want to use it to convert
-the code to minimize the amount of workarounds.
-
-If you can support only Python 2.6 and later then supporting Python 3 without
-``2to3`` conversion is probably the best option. Especially if you aren't
-much affected by the binary/Unicode switch, or if you only need to support
-Python 3.3 or later.
-
-If you are already releasing your package using Distutils or its descendants
-Setuptools and Distribute, then using Distribute's ``2to3`` support is easy,
-and that might be the path of least resistance. You can also start that way
-and change the code bit by bit to something that doesn't need converting.
-
-
-Frameworks
-===========================================================================
-
-The benefit of using frameworks when developing doesn't only come from the
-framework itself, but also from the plugins and extensions available to it. It
-is therefore important to make it easy for all developers using and extending
-the framework to switch to Python 3, as you otherwise risk being stuck on
-Python 2 forever.
-
-If your framework is extended by writing Python packages that uses Distutils,
-Setuptools or Distribute as a packaging system this means the users of your
-framework are already in a good position, as they can use Distutils or
-Distribute for the ``2to3`` conversion to support both new and old versions
-of the framework.
-
-If extensions are packaged and distributed in some other way
-than with Distutils you may want to consider making your own set of support
-scripts to make the transition easier, or stopping support for older Python
-versions, so that your third-party package developers don't have to use
-``2to3``.
-
+Today you typically only need to support Python 2.7, Python 3.4 and Python
+3.5. These versions have enough backwards and forwards compatibility to make
+it easy to make code that runs on both Python 2 and Python 3. So this is the
+recommended strategy for reusable packages.
 
 ---------------------------------------------------------------------------
 Summary
