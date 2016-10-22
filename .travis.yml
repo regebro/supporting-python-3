@@ -1,0 +1,9 @@
+language: python
+python:
+  - "2.6"
+  - "2.7"
+  - "3.2"
+
+install: pip install -r requirements.txt
+before_script: cd source/_tests
+script: python travistest.py

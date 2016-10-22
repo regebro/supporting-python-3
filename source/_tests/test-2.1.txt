@@ -1,6 +1,6 @@
 >>> import os, sys, subprocess, shutil
 >>> curdir = os.path.abspath(os.curdir)
->>> os.chdir('./source/_tests/test-2.1')
+>>> os.chdir('./test-2.1')
 >>> proc = subprocess.Popen([sys.executable, 'setup.py', 'build'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 >>> print(proc.stdout.read().decode())
 running build

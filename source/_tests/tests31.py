@@ -9,7 +9,7 @@ from shouldraise import shouldRaise
 
 files = []
 for filename in ('test-3.11.txt', 'test-4.9.txt',):
-    name2 = os.path.join('source/_tests', filename)
+    name2 = filename #os.path.join('source/_tests', filename)
     name3 = name2 + '.2to3'
     shutil.copy(name2, name3)
     files.append(name3)

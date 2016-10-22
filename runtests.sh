@@ -63,32 +63,34 @@ PYTHON34=${PYTHON34:-/opt/python34/bin/python}
 # Fail on error
 set -e
 
+cd source/_tests
+
 echo "##### PY23 #######"
-$PYTHON23 source/_tests/tests23.py
+$PYTHON23 tests23.py
 
 echo "##### PY24 #######"
-$PYTHON24 source/_tests/tests24.py
+$PYTHON24 tests24.py
 
 echo "##### PY25 #######"
-$PYTHON25 source/_tests/tests24.py
+$PYTHON25 tests24.py
 
 echo "##### PY26 #######"
-$PYTHON26 source/_tests/tests26.py
+$PYTHON26 tests26.py
 
 echo "##### PY27 #######"
 # Run both the Python 2.6 tests and the 2.7 specific tests:
-$PYTHON27 source/_tests/tests26.py
-$PYTHON27 source/_tests/tests27.py
+$PYTHON27 tests26.py
+$PYTHON27 tests27.py
 
 
 echo "##### PY31 #######"
-$PYTHON31 source/_tests/tests31.py
+$PYTHON31 tests31.py
 
 echo "##### PY32 #######"
-$PYTHON32 source/_tests/tests32.py
+$PYTHON32 tests32.py
 
 echo "##### PY33 #######"
-$PYTHON33 source/_tests/tests32.py
+$PYTHON33 tests32.py
 
 echo "##### PY34 #######"
-$PYTHON34 source/_tests/tests32.py
+$PYTHON34 tests32.py

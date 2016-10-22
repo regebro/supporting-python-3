@@ -196,5 +196,5 @@ class ConstantFixerTest(FixerTest):
         self._test(constant1_source, constant1_target)
         self._test(constant2_source, constant2_target)
         self._test(constant3_source, constant3_target)
-        self._test(open('source/_tests/constantexample.py').read(),
-                   open('source/_tests/constanttarget.py').read())
+        self._test(open('constantexample.py').read(),
+                   open('constanttarget.py').read())

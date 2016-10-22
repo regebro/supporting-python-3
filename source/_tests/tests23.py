@@ -14,7 +14,7 @@ for testfile in ['test-3.6.txt',
                  'test-5.5.txt',
                  'test-7.10.txt',
                  ]:
-    test = open('source/_tests/' + testfile).read()
+    test = open(testfile).read()
     mod = types.ModuleType('testmodule')
     mod.__doc__ = test
     mod.__file__ = ''

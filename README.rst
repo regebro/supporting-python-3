@@ -1,6 +1,8 @@
 Supporting Python 3
 ===================
 
+.. image:: https://api.travis-ci.org/regebro/supporting-python-3.png
+
 This is a free book about how to make your code support Python 3.
 
 It costs nothing, and you can both publish it and contribute to it!
@@ -27,8 +29,8 @@ Contributing to this book
 To contribute to this book, fork it on
 `GitHub <https://github.com/regebro/supporting-python-3>`_.
 
-If you are making any changes or additions that fall under copyright law, you 
-must first `sign the Contributor License Agreement 
+If you are making any changes or additions that fall under copyright law, you
+must first `sign the Contributor License Agreement
 <https://www.clahub.com/agreements/regebro/supporting-python-3>`_.
 
 Follow the instructions in `INSTALL.rst <INSTALL.rst>`_ on how to install it, and
