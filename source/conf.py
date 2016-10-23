@@ -201,7 +201,7 @@ print_latex_elements = {
     'preamble': r"""
 \usepackage[dvips]{geometry}
 \geometry{bindingoffset=0in,""" + print_form + r"""}
-\authoraddress{Ulica Retoryka 15/5\\*31-108 Krak\'{o}w\\*Poland\\*e-mail: info@colliberty.com}
+\authoraddress{Lennart Regebro\\*K\k{a}cka 15\\*54-004 Wroc\l{}aw\\*Poland\\*e-mail: regebro@gmail.com}
 \usepackage{fontspec}
 \usepackage{wasysym}
 \usepackage[titles]{tocloft}

@@ -56,7 +56,6 @@
       {\LARGE\py@HeaderFamily \@author \par}
     \end{flushright}%\par
     \clearpage%
-    {\Large Colliberty \\*}
     \py@authoraddress \par
     \vfill\vfill\vfill
 %    ISBN 978-1-490-36222-9
