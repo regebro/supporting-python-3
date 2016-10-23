@@ -22,3 +22,5 @@ Changes from "Porting to Python 3":
 * The UnicodeReader example didn't use it's own encoding.
 
 * A Py23DocChecker class to format unicode output in DocTests was added.
+
+* Switched from the commercial Flux font to the open source Linux Biolinum O

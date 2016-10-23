@@ -212,15 +212,7 @@ print_latex_elements = {
 
 %% Font changes:
 %% Yes, use bold for regular:
-\setsansfont[
-    Path=/home/lregebro/.fonts/,
-    Extension=.TTF,
-    UprightFont= *B___,
-    BoldFont=*B___,
-    ItalicFont=*I___,
-    BoldItalicFont=*BI__,
-    Mapping=tex-text
-]{FLUX}
+\setsansfont{Linux Biolinum O}
 \setmonofont[Scale=0.85]{DejaVu Sans Mono}
 \setmainfont[
     Extension=.otf,
