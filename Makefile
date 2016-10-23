@@ -20,6 +20,9 @@ OUTPUTNAME=SupportingPython3
 
 SPELL = aspell -l en_US
 
+
+TODAY = $(shell date +%Y%m%d)
+
 .PHONY: help clean html dirhtml pickle json htmlhelp qthelp latex changes linkcheck doctest
 
 help:
@@ -100,7 +103,7 @@ pdf-screen:
 	-cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) makeindex -s python.ist $(OUTPUTNAME).idx
 	# And run LaTex again, this time with correct page numbers
 	cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
-	pdfunite covers/ScreenFront.pdf build/latex/SupportingPython3.pdf covers/ScreenBack.pdf build/SupportingPython3-screen-1.0-dev.pdf
+	pdfunite covers/ScreenFront.pdf build/latex/SupportingPython3.pdf covers/ScreenBack.pdf build/SupportingPython3-screen-1.0-$(TODAY).pdf
 
 pdf-phones:
 	BOOK_SIZE=phones_form $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
@@ -118,7 +121,7 @@ pdf-phones:
 	-cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) makeindex -s python.ist $(OUTPUTNAME).idx
 	# And run LaTex again, this time with correct page numbers
 	cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
-	pdfunite covers/PhoneFront.pdf build/latex/SupportingPython3.pdf covers/PhoneBack.pdf build/SupportingPython3-phone-1.0-dev.pdf
+	pdfunite covers/PhoneFront.pdf build/latex/SupportingPython3.pdf covers/PhoneBack.pdf build/SupportingPython3-phone-1.0-$(TODAY).pdf
 
 pdf-tablets:
 	BOOK_SIZE=tablets_form $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
@@ -136,7 +139,7 @@ pdf-tablets:
 	-cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) makeindex -s python.ist $(OUTPUTNAME).idx
 	# And run LaTex again, this time with correct page numbers
 	cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
-	pdfunite covers/TabletFront.pdf build/latex/SupportingPython3.pdf covers/TabletBack.pdf build/SupportingPython3-tablet-1.0-dev.pdf
+	pdfunite covers/TabletFront.pdf build/latex/SupportingPython3.pdf covers/TabletBack.pdf build/SupportingPython3-tablet-1.0-$(TODAY).pdf
 
 # No support for book printing PDF's here. Talk to the author if you want to print books
 #pdf-print:
@@ -155,7 +158,7 @@ pdf-tablets:
 	#-cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) makeindex -s python.ist $(OUTPUTNAME).idx
 	## And run LaTex again, this time with correct page numbers
 	#cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
-	#pdfunite covers/PrintFront.pdf build/latex/SupportingPython3.pdf covers/PrintBack.pdf build/SupportingPython3-print-1.0-dev.pdf
+	#pdfunite covers/PrintFront.pdf build/latex/SupportingPython3.pdf covers/PrintBack.pdf build/SupportingPython3-print-1.0-$(TODAY).pdf
 
 pdf-all: pdf-screen pdf-tablets pdf-phones
 
