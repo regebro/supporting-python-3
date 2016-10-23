@@ -567,6 +567,42 @@ a helper function that makes sure the output is a string before printing it:
 It also removes leading and trailing whitespace for good measure, so that
 you don't have to have as many ``<BLANKLINE>`` statements in the code.
 
+Unicode representation
+======================
+
+Output from functions that return text data, like reading from a file
+with a declared encoding, will return ``unicode`` under Python 2,
+while in Python 3 they will return ``str``, which has a different
+native representation. A simple function like this, which returns text data, will fail on Python 2.
+
+.. literalinclude:: _tests/doctest-unicode-fail.txt
+
+The problem is that a ``unicode`` string will be written like
+``u'Hello'`` under Python 2, and the same function will returning a
+``str`` that will be written like ``'Hello'`` under Python 3. One
+woraround is to use ``from __future__ import unicode_literals`` and
+write doctests in a contorted style:
+
+.. literalinclude:: _tests/doctest-unicode.txt
+
+A more complex workaround, but which leads to doctests that are easier
+to read, is to write your tests to expect Python 3-style string
+literals, and then re-write them on the fly if you're testing under
+Python 2. This will require you to run doctests from within the
+unittest framework, using the ``load_tests`` mechanism and specifying
+a special checker class that transforms the expected output just prior
+to checking it:
+		    
+.. literalinclude:: _tests/doctest-checker.txt
+
+.. note::
+
+   This recipe is adapted from
+   http://dirkjan.ochtman.nl/writing/2014/07/06/single-source-python-23-doctests.html,
+   but rewritten to use the Python 3 formatting as the native one.
+
+
+		    
 ``dict`` and ``set`` order
 ==========================
 

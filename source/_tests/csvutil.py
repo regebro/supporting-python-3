@@ -27,7 +27,7 @@ class UnicodeReader:
         row = next(self.reader)
         if PY3:
             return row
-        return [s.decode("utf-8") for s in row]
+        return [s.decode(self.encoding) for s in row]
 
     __next__ = next
 
