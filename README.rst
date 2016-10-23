@@ -81,3 +81,7 @@ with tools like pdfunite::
 
     $ pdfunite covers/PhoneFront.pdf build/latex/SupportingPython3.pdf \
         covers/PhoneBack.pdf SupportingPython3-phone-1.0-dev.pdf
+
+An additional hitch is that each release of Sphinx or texlive will have changes
+that break the PDF generation, so it's highly unlikely that this book will
+generate cleanly on your computer.

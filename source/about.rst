@@ -42,6 +42,9 @@ book for content, grammar and errors.
 **Brandon Craig Rhodes** for editing the first chapters of this book when the
 idea was that it would be a series of articles in Python Magazine.
 
+See also CONTRIBUTORS.txt for everyone who has made bugfixes, spelling
+corrections and other additions to this book.
+
 ---------------------------------------------------------------------------
 A note on terminology
 ---------------------------------------------------------------------------

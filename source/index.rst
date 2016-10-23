@@ -7,36 +7,17 @@ through the process of adding Python 3 support, from choosing a
 strategy to solving your distribution issues. Using plenty of code
 examples, it guides you across the hurdles and shows you the new Python features.
 
-Crowd funding successful!
--------------------------
+2016-10-23: The first release of the community version!
+-------------------------------------------------------
 
-This book has been helpful for a lot of people, but is now in risk of getting outdated.
-But that's tp the community helping out this book will make it into a community project
-that everyone can update!
+After almost a year of delay, the community version of the book is finally
+here! The book has been renamed to "Supporting Python 3" to signal both that
+something happened to the book, and to signal that it's no longer a question
+of porting.
 
-
-Get the book!
--------------
-
-* `PDF version! <https://gumroad.com/l/python3>`_ Get it for when you are offline!
-
-* Paperback version! Yes, the book is back in print! For reading in bed or at the beach! It's available from many channels:
-
-  * `Directly from Createspace <https://www.createspace.com/4312357>`_
-  * Amazon: `.com <http://www.amazon.com/Porting-Python-An--depth-guide/dp/1490362223>`_,
-    `.co.uk <http://www.amazon.co.uk/Porting-Python-An--depth-guide/dp/1490362223>`_,
-    `.de <http://www.amazon.de/Porting-Python-An--depth-guide/dp/1490362223>`_,
-    `.es <http://www.amazon.es/Porting-Python-An--depth-guide/dp/1490362223>`_,
-    `.fr <http://www.amazon.fr/Porting-Python-An--depth-guide/dp/1490362223>`_,
-    `.it <http://www.amazon.it/Porting-Python-An--depth-guide/dp/1490362223>`_
-  * On other Amazons (but via resellers)
-  * If you want to more than ten, contact me: `lennart@colliberty.com <mailto:lennart@colliberty.com>`_
-
-* 14 more pages!
-
-* Several new tricky bits explained!
-
-* Fewer spelling errors!
+Another change is that this site will be rebuilt on a nightly basis, so it's
+always the latest version. I'll also retire the paper and PDF versions
+completely.
 
 
 Contents
