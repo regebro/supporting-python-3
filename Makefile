@@ -100,7 +100,7 @@ pdf-screen:
 	-cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) makeindex -s python.ist $(OUTPUTNAME).idx
 	# And run LaTex again, this time with correct page numbers
 	cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
-	pdfunite covers/ScreenFront.pdf build/latex/SupportingPython3.pdf covers/ScreenBack.pdf SupportingPython3-screen-1.0-dev.pdf
+	pdfunite covers/ScreenFront.pdf build/latex/SupportingPython3.pdf covers/ScreenBack.pdf build/SupportingPython3-screen-1.0-dev.pdf
 
 pdf-phones:
 	BOOK_SIZE=phones_form $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
@@ -118,7 +118,7 @@ pdf-phones:
 	-cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) makeindex -s python.ist $(OUTPUTNAME).idx
 	# And run LaTex again, this time with correct page numbers
 	cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
-	pdfunite covers/PhoneFront.pdf build/latex/SupportingPython3.pdf covers/PhoneBack.pdf SupportingPython3-phone-1.0-dev.pdf
+	pdfunite covers/PhoneFront.pdf build/latex/SupportingPython3.pdf covers/PhoneBack.pdf build/SupportingPython3-phone-1.0-dev.pdf
 
 pdf-tablets:
 	BOOK_SIZE=tablets_form $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
@@ -136,7 +136,7 @@ pdf-tablets:
 	-cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) makeindex -s python.ist $(OUTPUTNAME).idx
 	# And run LaTex again, this time with correct page numbers
 	cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
-	pdfunite covers/TabletFront.pdf build/latex/SupportingPython3.pdf covers/TabletBack.pdf SupportingPython3-tablet-1.0-dev.pdf
+	pdfunite covers/TabletFront.pdf build/latex/SupportingPython3.pdf covers/TabletBack.pdf build/SupportingPython3-tablet-1.0-dev.pdf
 
 pdf-print:
 	BOOK_SIZE=print_form $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
@@ -154,7 +154,7 @@ pdf-print:
 	-cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) makeindex -s python.ist $(OUTPUTNAME).idx
 	# And run LaTex again, this time with correct page numbers
 	cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
-	pdfunite covers/PrintFront.pdf build/latex/SupportingPython3.pdf covers/PrintBack.pdf SupportingPython3-print-1.0-dev.pdf
+	pdfunite covers/PrintFront.pdf build/latex/SupportingPython3.pdf covers/PrintBack.pdf build/SupportingPython3-print-1.0-dev.pdf
 
 pdf-all: pdf-screen pdf-tablets pdf-phones
 
