@@ -82,6 +82,11 @@ with tools like pdfunite::
     $ pdfunite covers/PhoneFront.pdf build/latex/SupportingPython3.pdf \
         covers/PhoneBack.pdf SupportingPython3-phone-1.0-dev.pdf
 
-An additional hitch is that each release of Sphinx or texlive will have changes
-that break the PDF generation, so it's highly unlikely that this book will
-generate cleanly on your computer.
+An additional hitch is that each release of Sphinx or texlive will have
+changes that break the PDF generation, so it's highly unlikely that this book
+will generate cleanly on your computer. It works on Ubuntu 14.04LTS, but not
+on Ubuntu 16.04, for example.
+
+You have to install at least the following packages to build the book::
+
+  ``texlive texlive-xetex texlive-latex-extra lmodern fonts-texgyre fonts-linuxlibertine python-sphinx``

@@ -39,7 +39,8 @@ Contents
    differences.rst
    stdlib.rst
 
-There is also a list of :doc:`errata`, still fairly short.
+There is also a list of :doc:`errata` that covers the earlier printed editions
+of "Porting to Python 3".
 
 About the Author
 ----------------
