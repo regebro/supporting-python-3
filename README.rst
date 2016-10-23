@@ -89,4 +89,5 @@ on Ubuntu 16.04, for example.
 
 You have to install at least the following packages to build the book::
 
-  ``texlive texlive-xetex texlive-latex-extra lmodern fonts-texgyre fonts-linuxlibertine python-sphinx``
+  ``texlive texlive-xetex texlive-latex-extra lmodern fonts-texgyre
+    fonts-linuxlibertine python-sphinx poppler-utils``

@@ -197,10 +197,12 @@ screen_form = r"hdivide={1in,*,1in},vdivide={1in,*,1in},papersize={8.27in,11in}"
 tablets_form = r"hdivide={0.1in,*,0.1in},vdivide={0.7in,*,0.7in},papersize={7in,9in}"
 phones_form = r"hdivide={0.1in,*,0.1in},vdivide={0.7in,*,0.7in},papersize={4.8in,7.2in}"
 
+form = os.environ.get('BOOK_SIZE', 'print_form')
+
 print_latex_elements = {
     'preamble': r"""
 \usepackage[dvips]{geometry}
-\geometry{bindingoffset=0in,""" + print_form + r"""}
+\geometry{bindingoffset=0in,""" + eval(form) + r"""}
 \authoraddress{Lennart Regebro\\*K\k{a}cka 15\\*54-004 Wroc\l{}aw\\*Poland\\*e-mail: regebro@gmail.com}
 \usepackage{fontspec}
 \usepackage{wasysym}
