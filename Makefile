@@ -100,7 +100,7 @@ pdf-screen:
 	-cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) makeindex -s python.ist $(OUTPUTNAME).idx
 	# And run LaTex again, this time with correct page numbers
 	cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
-	pdfunite covers/ScreenFront.pdf build/latex/SupportingPython3.pdf covers/ScreenBack.pdf SupportingPython3-screen-1.0-dev.pdf
+	pdfunite covers/ScreenFront.pdf build/latex/SupportingPython3.pdf covers/ScreenBack.pdf build/SupportingPython3-screen-1.0-dev.pdf
 
 pdf-phones:
 	BOOK_SIZE=phones_form $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
@@ -118,7 +118,7 @@ pdf-phones:
 	-cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) makeindex -s python.ist $(OUTPUTNAME).idx
 	# And run LaTex again, this time with correct page numbers
 	cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
-	pdfunite covers/PhoneFront.pdf build/latex/SupportingPython3.pdf covers/PhoneBack.pdf SupportingPython3-phone-1.0-dev.pdf
+	pdfunite covers/PhoneFront.pdf build/latex/SupportingPython3.pdf covers/PhoneBack.pdf build/SupportingPython3-phone-1.0-dev.pdf
 
 pdf-tablets:
 	BOOK_SIZE=tablets_form $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
@@ -136,26 +136,26 @@ pdf-tablets:
 	-cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) makeindex -s python.ist $(OUTPUTNAME).idx
 	# And run LaTex again, this time with correct page numbers
 	cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
-	pdfunite covers/TabletFront.pdf build/latex/SupportingPython3.pdf covers/TabletBack.pdf SupportingPython3-tablet-1.0-dev.pdf
+	pdfunite covers/TabletFront.pdf build/latex/SupportingPython3.pdf covers/TabletBack.pdf build/SupportingPython3-tablet-1.0-dev.pdf
 
 # No support for book printing PDF's here. Talk to the author if you want to print books
 #pdf-print:
-#	BOOK_SIZE=print_form $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
-#	# Copy in some custom files
-#	cp source/_templates/sphinxcustom.cls $(BUILDDIR)/latex/sphinxcustom.cls
-#	cp source/_templates/sphinx.sty $(BUILDDIR)/latex/sphinx.sty
-#	cp source/_static/by-nc-sa.pdf $(BUILDDIR)/latex/by-nc-sa.pdf
-#	# Run LaTeX three times, the first time generates the text:
-#	cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
-#	# Create the indexes
-#	-cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) makeindex -s python.ist $(OUTPUTNAME).idx
-#	# Re run LaTex with indexes. Now we get a content listing and an index.
-#	cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
-#	# Recreate the index since all the page numbers changed when the content listing appeared.
-#	-cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) makeindex -s python.ist $(OUTPUTNAME).idx
-#	# And run LaTex again, this time with correct page numbers
-#	cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
-#	pdfunite covers/PrintFront.pdf build/latex/SupportingPython3.pdf covers/PrintBack.pdf SupportingPython3-print-1.0-dev.pdf
+	#BOOK_SIZE=print_form $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+	## Copy in some custom files
+	#cp source/_templates/sphinxcustom.cls $(BUILDDIR)/latex/sphinxcustom.cls
+	#cp source/_templates/sphinx.sty $(BUILDDIR)/latex/sphinx.sty
+	#cp source/_static/by-nc-sa.pdf $(BUILDDIR)/latex/by-nc-sa.pdf
+	## Run LaTeX three times, the first time generates the text:
+	#cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
+	## Create the indexes
+	#-cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) makeindex -s python.ist $(OUTPUTNAME).idx
+	## Re run LaTex with indexes. Now we get a content listing and an index.
+	#cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
+	## Recreate the index since all the page numbers changed when the content listing appeared.
+	#-cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) makeindex -s python.ist $(OUTPUTNAME).idx
+	## And run LaTex again, this time with correct page numbers
+	#cd $(BUILDDIR)/latex; PATH=$(LATEXPATH) $(LATEXEXE) $(LATEXOPTS) $(OUTPUTNAME).tex
+	#pdfunite covers/PrintFront.pdf build/latex/SupportingPython3.pdf covers/PrintBack.pdf build/SupportingPython3-print-1.0-dev.pdf
 
 pdf-all: pdf-screen pdf-tablets pdf-phones
 

@@ -193,7 +193,7 @@ latex_documents = [
 
 # Additional stuff for the LaTeX preamble.
 print_form = r"hdivide={0.75in,*,0.75in},vdivide={1in,*,1in},papersize={6in,9in}"
-screen_form = r"hdivide={1in,*,1in},vdivide={1in,*,1in},papersize={8.27in,11in}"
+screen_form = r"hdivide={1in,*,1in},vdivide={1in,*,1in},papersize={7.32in,11in}"
 tablets_form = r"hdivide={0.1in,*,0.1in},vdivide={0.7in,*,0.7in},papersize={7in,9in}"
 phones_form = r"hdivide={0.1in,*,0.1in},vdivide={0.7in,*,0.7in},papersize={4.8in,7.2in}"
 
