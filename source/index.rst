@@ -1,6 +1,5 @@
-
-Supporting Python 3: An in-depth guide
-======================================
+Welcome!
+========
 
 **Supporting Python 3** doesn't have to be daunting. This book guides you
 through the process of adding Python 3 support, from choosing a
