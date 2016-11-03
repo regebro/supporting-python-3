@@ -1,6 +1,12 @@
 CHANGES
 =======
 
+1.1 (Unreleased)
+----------------
+
+* Clarified that long() typically is not needed.
+
+
 1.0 (2016-10-23)
 ----------------
 

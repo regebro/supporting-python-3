@@ -366,8 +366,9 @@ that the following code fails in Python 3:
 .. literalinclude:: _tests/long25.txt
 
 It's quite unusual that you would need to specify that an integer should be a
-long in Python 2. If you do and you need code that runs in both Python 2 and
-Python 3 without ``2to3`` conversion, the following code works:
+long in Python 2, as Python's integer functions all will return ``long`` when
+needed. If you do require it the following code works on both Python 2 and
+Python 3 without ``2to3`` conversion:
 
 .. literalinclude:: _tests/long26.txt
 
