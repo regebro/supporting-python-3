@@ -91,3 +91,22 @@ You have to install at least the following packages to build the book::
 
   ``texlive texlive-xetex texlive-latex-extra lmodern fonts-texgyre
     fonts-linuxlibertine python-sphinx poppler-utils``
+
+EPUB Generation
+---------------
+It is also possible to make an EPUB format of this book with the command 
+``make epub`` - note that at the current time this will lack the front and 
+back covers.
+
+The resulting eBook, in EPUB format, will be placed in the file 
+``build/epub/SupportingPython3.epub`` _or it's windows equivalent.
+
+HTML Generation
+---------------
+It is also possible to make both standalone HTML and HTML directory, 
+(directories with ``index.html`` starting points), formats of this book
+with the commands ``make html`` and ``make dirhtml`` - note that at the
+current time these will lack the front and back covers.
+
+The resulting books will be placed in the directories 
+``build/html`` and ``build/dirhtml`` respectively.
