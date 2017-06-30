@@ -88,8 +88,8 @@ longer a dream but an actual thing. I stood up, we gave each other an ecstatic
 high-five, and just smiled (the next day people asked us at work what we were so
 giddy about that night).
 
-At that moment, and to this day, the thought that Python 3 would flop or not be
-worth the amount of time and effort my fellow core developers and I put into it
+At that moment, and to this day, the thought that Python 3 would flop or would not
+be worth the amount of time and effort my fellow core developers and I put into it
 never crossed my mind. And the fact that people care enough about seeing Python
 3 work that there is now a book dedicated to helping people get from Python 2 to
 Python 3 is a testament that Python 3 has not, and will not, flop.
