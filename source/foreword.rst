@@ -6,6 +6,10 @@ Foreword
 
     \paragraph{\hfill{By Brett Cannon}}
 
+.. raw:: html
+
+    <p><strong>By Brett Cannon</strong></p>
+
 When I joined the python-dev mailing list back in June 2002, the term "Python
 3000" was brought out every few months to represent an idea the Python
 development team wished they could act on, but for compatibility reasons could

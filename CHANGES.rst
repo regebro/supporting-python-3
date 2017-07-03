@@ -6,6 +6,10 @@ CHANGES
 
 * Clarified that long() typically is not needed.
 
+* Make a sentence in the foreword read better [Brett Cannon]
+
+* The foreword byline didn't show up in HTML.
+
 
 1.0 (2016-10-23)
 ----------------
@@ -30,3 +34,4 @@ Changes from "Porting to Python 3":
 * A Py23DocChecker class to format unicode output in DocTests was added.
 
 * Switched from the commercial Flux font to the open source Linux Biolinum O
+
