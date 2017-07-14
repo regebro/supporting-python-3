@@ -13,7 +13,7 @@ Python developer. I don't even mention other languages on my CV anymore, because
 I don't want to use them. I've become a full fledged, fanatic, Pythonista.
 
 I got interested in Python 3 at EuroPython 2007 in lovely Vilnius. Guido van
-Rossums keynote was about the upcoming changes in Python 3 and although he
+Rossum's keynote was about the upcoming changes in Python 3 and although he
 emphatically said that you could not run the same code under Python 2 and
 Python 3, I couldn't see many reasons why it couldn't be done, considering the
 forward compatibility that was planned for Python 2.6. So I started looking at
@@ -68,7 +68,7 @@ waiting for Python 3 support? Maybe you can help?
 It's always a good idea to publish information on your plans for Python 3 on your
 software's homepage or in the description of the package on the CheeseShop.
 Include a list of your dependencies that are blocking you. That way your users can
-see if there is something they can help with. Open source all is about
+see if there is something they can help with. Open source is all about
 programmers helping each other; both using and contributing to each other's
 software. Supporting Python 3 is no different.
 
