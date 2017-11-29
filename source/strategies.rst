@@ -128,7 +128,7 @@ Python 2.6 and 2.7 have a lot of forward compatibility, making supporting
 Python 2.6 and Python 3 much easier than supporting Python 2.5 and Python 3.
 Supporting 2.5 or even older versions means you have to employ more tricks.
 Python 3.3 also re-introduces the ``u''`` literal for strings, which helps with
-one of the major difficulties in supoprting Python 3.
+one of the major difficulties in supporting Python 3.
 
 .. index:: six
 
