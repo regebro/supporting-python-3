@@ -1,7 +1,10 @@
 >>> import math
 >>> def my_round(x, d=0):
 ...     p = 10 ** d
-...     return float(math.floor((x * p) + math.copysign(0.5, x)))/p
+...     if x > 0:
+...         return float(math.floor((x * p) + 0.5))/p
+...     else:
+...         return float(math.ceil((x * p) - 0.5))/p
 
 >>> my_round(1.5)
 2.0
