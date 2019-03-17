@@ -7,7 +7,7 @@ This appendix contains a listing of the differences between Python 2 and Python
 conversion.
 
 This listing is incomplete. What is listed here is only the intentional changes
-that are not bug fixes and even so there may be accidental ommissions.
+that are not bug fixes and even so there may be accidental omissions.
 
 ---------------------------------------------------------------------------
 ``apply()``
@@ -279,7 +279,7 @@ to the Python 3 behavior.
 
 If you need to support Python 2.4 or earlier you have to spell out the whole
 package name so ``import csv`` becomes ``from mypkg import csv`` and ``from csv
-import my_csv`` becomes ``from mypckg.csv import my_csv``. For clarity and
+import my_csv`` becomes ``from mypkg.csv import my_csv``. For clarity and
 readability I would avoid relative imports if you can and always spell out
 the whole path.
 
@@ -401,15 +401,15 @@ iterables are exhausted, extending the other arguments with ``None``.
 .. literalinclude:: _tests/map25.txt
 
 In Python 3 ``map()`` will instead stop at the shortest of the arguments. If
-you want the Python 2 behaviour in Python 3 you can use a combination of
+you want the Python 2 behavior in Python 3 you can use a combination of
 ``starmap()`` and ``zip_longest()``.
 
 .. literalinclude:: _tests/map30.txt
 
 The Python 2 ``map()`` will accept ``None`` as it's function argument, where
 it will just return the object(s) passed in. As this transforms ``map()``
-into ``zip()`` it's not particularily useful, and in Python 3 this no longer
-works. However, some code dependes on this behavior, and you can use the
+into ``zip()`` it's not particularly useful, and in Python 3 this no longer
+works. However, some code depends on this behavior, and you can use the
 following function as a full replacement for the Python 2 map.
 
 .. literalinclude:: _tests/map2.py
