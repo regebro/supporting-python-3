@@ -203,7 +203,7 @@ More comprehensions
 
 Generators have been around since Python 2.2, but a new way to make
 generators appeared in Python 2.4, namely generator expressions. These
-are like list comprehesions, but instead of returning a list, they return
+are like list comprehensions, but instead of returning a list, they return
 a generator. They can be used in many places where list comprehensions are
 normally used:
 
@@ -250,7 +250,7 @@ from the iterator.
 .. literalinclude:: _tests/test-7.10.txt
 
 This special method has in Python 3 been renamed to ``.__next__()`` to be
-consistent with the naming of special attributes elswhere in Python. However,
+consistent with the naming of special attributes elsewhere in Python. However,
 you should generally not call it directly, but instead use the builtin
 ``next()`` function. This function is also available from Python 2.6, so
 unless you are supporting Python 2.5 or earlier you can switch.

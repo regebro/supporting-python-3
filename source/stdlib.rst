@@ -17,7 +17,7 @@ consistent and easier to use. All the module names now conform to the
 style guide for Python code, PEP 8\ [#pep8]_,
 and several modules have been merged.
 
-``2to3`` contains fixers for all of this, so this sectin is mostly of interest
+``2to3`` contains fixers for all of this, so this section is mostly of interest
 if you need to support both Python 2 and Python 3 without ``2to3`` conversion.
 
 The ``six`` module\ [#six]_ has support for most of the standard library

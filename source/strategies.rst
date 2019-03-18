@@ -132,7 +132,7 @@ one of the major difficulties in supporting Python 3.
 
 .. index:: six
 
-Benjamin Petersons excellent ``six`` module\ [#six]_ also helps by wrapping
+Benjamin Peterson's excellent ``six`` module\ [#six]_ also helps by wrapping
 much of the incompatibilities, and since the need to support older Python
 versions is shrinking, supporting both Python 2 and Python 3 without conversion
 is becoming the preferred method.

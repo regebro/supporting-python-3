@@ -208,7 +208,7 @@ for that.
 Another option is to define three functions. Firstly the actual module
 initialization function, returning a ``PyObject*`` and then two wrappers. One
 for Python 3 that calls the first and returns the value and one for Python 2
-that calls the module initizaliation without returning a value:
+that calls the module initialization without returning a value:
 
 .. code-block:: none
 

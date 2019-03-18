@@ -24,7 +24,7 @@ Python on the way.
 Most surprising was how little the fundamentals have changed. Writing code with
 Python 3 still feels just like the old comfortable shoes, but newly shined and
 with new laces. The hardest change to get used to is to remember that ``print``
-is a function. The relatively small differences doesn't necessarily mean that
+is a function. The relatively small differences don't necessarily mean that
 supporting Python 3 is easy, but it can be and hopefully this book will make it
 even easier.
 

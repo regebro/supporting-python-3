@@ -8,7 +8,7 @@ About this book
 
 This book is an open book whose source is available on GitHub\ [#GitHub]_
 so that anyone can contribute to the book. The author and editor is
-Lennart Regebro, and future contibutors will be listed here.
+Lennart Regebro, and future contributors will be listed here.
 
 This book is written in reStructuredText\ [#rest]_, typeset with
 Sphinx\ [#sphinx]_ and LaTeX\ [#latex]_ and printed on

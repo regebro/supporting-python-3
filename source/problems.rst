@@ -355,7 +355,7 @@ different on different platforms. If it has any other encoding you need to pass
 that encoding into the ``open()`` function as a parameter. In Python 2 the
 ``open()`` function doesn't take an encoding parameter and will return a ``str``
 object. As long as your file contains only ASCII characters this isn't a
-problem, but when it does you will have to make some changes.
+problem, but when it doesn't you will have to make some changes.
 
 Opening the file as binary and decoding the data afterward is an option, for
 example with ``codecs.open()``. However, the translation of line endings that
@@ -578,9 +578,9 @@ native representation. A simple function like this, which returns text data, wil
 .. literalinclude:: _tests/doctest-unicode-fail.txt
 
 The problem is that a ``unicode`` string will be written like
-``u'Hello'`` under Python 2, and the same function will returning a
+``u'Hello'`` under Python 2, and the same function will return a
 ``str`` that will be written like ``'Hello'`` under Python 3. One
-woraround is to use ``from __future__ import unicode_literals`` and
+workaround is to use ``from __future__ import unicode_literals`` and
 write doctests in a contorted style:
 
 .. literalinclude:: _tests/doctest-unicode.txt
