@@ -23,7 +23,7 @@ if you need to support both Python 2 and Python 3 without ``2to3`` conversion.
 The ``six`` module\ [#six]_ has support for most of the standard library
 reorganization. You can import the reorganized modules from ``six.moves``::
 
-    >>> from six.moves import cStringIO
+    >>> from six.moves import StringIO
 
 In Python 2 this will be equivalent to::
 
