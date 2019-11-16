@@ -20,14 +20,14 @@ When fixers are necessary
 It is strongly recommended that you don't change the API when you add Python 3
 support to your module or package, but sometimes you have to. For example, the
 Zope Component Architecture, a collection of packages to help you componentize
-your system, had to change it's API. With the ZCA\ [#zca]_ you define interfaces
+your system, had to change its API. With the ZCA\ [#zca]_ you define interfaces
 that define the behavior of components and then make components that implement
 these interfaces. A simple example looks like this:
 
 .. literalinclude:: _tests/test-6.1.txt
 
 The important line here is the ``implements(IMyInterface)`` line. It uses the
-way meta-classes are done in Python 2 for it's extensions, by using the
+way meta-classes are done in Python 2 for its extensions, by using the
 ``__metaclass__`` attribute. However, in Python 3, there is no
 ``__metaclass__`` attribute and this technique doesn't work any longer.
 Thankfully class decorators arrived in Python 2.6, a new and better technique
@@ -52,7 +52,7 @@ to remove some of the confusion and lead you to the right path from the start.
 The Parse Tree
 ---------------------------------------------------------------------------
 
-.. index:: concrets parse tree
+.. index:: concrete parse tree
 
 The ``2to3`` package contains support for parsing code into a parse tree. This
 may seem superfluous, as Python already has two modules for that, namely
@@ -245,7 +245,7 @@ snippet you do want. It will then print out a pattern that matches that code
 snippet. You can also type in a code snippet as an argument, but that becomes
 fiddly for multi-line snippets.
 
-If we look at the first line of our example, it's pattern is::
+If we look at the first line of our example, its pattern is::
 
     import_from< 'from' 'foo' 'import' 'CONSTANT' >
 
