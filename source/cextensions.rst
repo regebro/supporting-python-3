@@ -19,7 +19,7 @@ Before you start
 
 .. index:: RO, READONLY, static/statichere/staticforward
 
-There are some things you can do before you start the actual work of addnig
+There are some things you can do before you start the actual work of adding
 Python 3 support. The first one is to remove any usage of some old aliases you
 don't need any more. For example the ``RO`` macro has been removed. It was only
 a shorthand for ``READONLY``, so if you used ``RO`` in your code you can replace
