@@ -1,6 +1,6 @@
 This is an example of a doctest. 
 
-    >>> print "This should work"
+    >>> print("This should work")
     This should work
     
     >>> import socket

@@ -13,7 +13,7 @@
 ...
 >>> out = StringIO()
 >>> with redirect_stdout(out):
-...     print 'Test'
+...     print('Test')
 ...
 >>> out.getvalue() == 'Test\n'
 True
