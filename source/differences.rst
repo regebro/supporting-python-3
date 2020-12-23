@@ -272,7 +272,7 @@ standard library, and to import the local ``csv.py`` file you need to write
 ``from .csv import my_csv``. These are called "relative imports", and there is
 also a syntax to import from one level up module above; ``from .. import csv``.
 
-If you to support both Python 2 and Python 3 without ``2to3`` the ``from .``
+If you need to support both Python 2 and Python 3 without ``2to3`` the ``from .``
 and ``from ..`` syntax has been available since Python 2.5, together with a
 ``from __future__ import absolute_import`` statement that changes the behavior
 to the Python 3 behavior.
