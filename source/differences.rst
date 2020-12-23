@@ -516,7 +516,7 @@ In Python 2 ``range()`` returns a list, and ``xrange()`` returns an object
 that will only generate the items in the range when needed, saving memory.
 
 In Python 3, the ``range()`` function is gone, and ``xrange()`` has been
-renamed ``range()``. In addition the ``range()`` object support slicing in
+renamed ``range()``. In addition the ``range()`` object supports slicing in
 Python 3.2 and later .
 
 ``2to3`` will in some cases place a ``list()`` call around the call to
