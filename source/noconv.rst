@@ -257,7 +257,7 @@ Two times three is "six"
 .. index:: six
 
 There are many many more unusual and sometimes subtle differences between
-Python 2 and Python 3. Although the techniques mentioned here works for most
+Python 2 and Python 3. Although the techniques mentioned here work for most
 of them, I definitely recommend you to look at Benjamin Peterson's module
 "six"\ [#six]_ It contains a ``PY3`` constant to use when checking for the version of
 Python, and it contains the above mentioned ``b()`` and ``u()`` functions,
