@@ -65,7 +65,7 @@ I have tried to avoid using the word "porting" in the text as a part of this.
 .. rubric:: Footnotes
 
 .. [#rest] `http://docutils.sourceforge.net/rst.html <http://docutils.sourceforge.net/rst.html>`_
-.. [#sphinx] `http://sphinx.pocoo.org/ <http://sphinx.pocoo.org/>`_
+.. [#sphinx] `https://www.sphinx-doc.org/ <https://www.sphinx-doc.org/>`_
 .. [#latex] `http://www.latex-project.org/ <http://www.latex-project.org/>`_
 .. [#createspace] `https://www.createspace.com/ <https://www.createspace.com/>`_
 .. [#GitHub] `https://github.com/regebro/supporting-python-3 <https://github.com/regebro/supporting-python-3>`_
